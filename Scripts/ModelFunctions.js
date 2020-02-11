@@ -32,7 +32,7 @@ function loadJSON(callback, file) {
     };
 
     xobj.send(null);
-};
+}
 
 var db = new Data();
 

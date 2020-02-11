@@ -1,0 +1,111 @@
+html {
+    background-color: aliceblue ;
+    font-family: "Roboto Thin", Courier;
+    background:url("../Images/Loc_org.jpg") center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.main_page_options{
+    flex:1;
+    text-align: center;
+    font-size: x-large;
+    color:aliceblue;
+    background-color: #462a17;
+    border-radius: 5px;
+    padding:50px;
+    margin-left:100px;
+    margin-right:100px;
+}
+.main_page_options:hover{
+    background-color: #604533;
+}
+
+#landing_view{
+    display: flex;
+    flex-direction: column;
+    height:98vh;
+    width:100%;
+}
+#staff_login_container{
+    flex: 0.5;
+}
+#staff_login_btn{
+    background-color: #334660;
+    color:aliceblue;
+    border-radius: 5px;
+    padding:15px;
+    margin:20px;
+    float: right;
+    text-align: center;
+}
+#staff_login_btn:hover{
+    background-color: slategrey;
+}
+#welcome-message_container{
+    flex:1;
+}
+#welcome-message{
+    font-size: xx-large;
+    color: aliceblue;
+    margin:50px;
+}
+#bar_name{
+    font-family: "Old English Text MT", Courier;
+    font-size: 70px;
+}
+#main-page_option-container{
+    flex: 1;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    //flex-wrap: wrap;
+}
+
+#home_view{
+    height:98vh;
+    width:100%;
+    opacity:0.9;
+    background-color: white;
+}
+
+
+
+/* On screens that are 992px or less, set the background color to blue*/
+@media screen and (max-width: 992px) {
+    .main_page_options{
+        width:400px;
+        height:100px;
+        padding:10px;
+        margin: 10px;
+        flex: 0;
+    }
+    #main-page_option-container{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+/* On screens that are 600px or less, set the background color to olive*/
+@media screen and (max-width: 600px) {
+    .main_page_options{
+        width:350px;
+        padding:10px;
+        margin: 10px;
+        flex: 0;
+    }
+    #main-page_option-container{
+        flex: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
