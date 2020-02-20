@@ -1,0 +1,18 @@
+{
+  "english": {
+    "staff_login_btn_txt":"Staff login",
+    "welcome-message_txt":"Welcome to the",
+    "bar_name_txt":"<b>Lighthouse On The Cliff<b>",
+    "welcome-message_cont_txt":"(A franchise of The Flying Dutchman)",
+    "option_1_txt":" Click to order.",
+    "option_2_txt":" Are you a VIP customer? <br> Click to login."
+  },
+  "swedish": {
+    "staff_login_btn_txt":"Personalinloggning",
+    "welcome-message_txt":"Välkommen till",
+    "bar_name_txt":"<b>Fyr På Klippan<b>",
+    "welcome-message_cont_txt":"(En franchise av The Flying Dutchman)",
+    "option_1_txt":" Klicka för att beställa.",
+    "option_2_txt":" Är du VIP-kund? <br> Klicka för att logga in."
+  }
+}

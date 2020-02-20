@@ -1,10 +1,24 @@
+//Author: Anagha
 $(function() {
-    $("#home_view").hide();
+    //read the text from translation.json file to populate the view
+    function populateText() {
+        $.getJSON("JSON/Translation.json", function (translationJson) {
+            //Get the selected language
+            var langSelection = document.getElementById("lang");
+            var language = langSelection.options[langSelection.selectedIndex].value;
 
-    $("#option_1").click(function () {
-        $("#landing_view").hide();
-        $("#home_view").show();
+            //function to populate text based on language selection
+            var allTxtIDs = $("[id*='txt']"); //all components in view with that contains txt in their ID
+
+            allTxtIDs.each(function (index, item) {
+                item.innerHTML = translationJson[language][item.id];
+            });
+        });
+    }
+    //change language selection event
+    $( "#lang" ).change(function() {
+        populateText();
     });
-
+    populateText(); //Call once on loading the app
 
 });

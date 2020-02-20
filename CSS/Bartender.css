@@ -1,0 +1,253 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+/*Styles for tables and orders*/
+.tables{
+    border-radius: 100%;
+    height:250px;
+    width:250px;
+    border: 3px solid #604533;
+    color:white;
+    font-weight: bold;
+    display:inline-block;
+    margin:50px;
+    background-color: #604533;
+}
+.order_1{
+    position: absolute;
+    margin-left: 35px;
+    margin-top: 40px;
+}
+.order_2{
+    position: absolute;
+    margin-left: 165px;
+    margin-top: 40px;
+}
+.order_3{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 100px;
+}
+.order_4{
+    position: absolute;
+    margin-left: 195px;
+    margin-top: 100px;
+}
+.order_5{
+    position: absolute;
+    margin-left: 35px;
+    margin-top: 160px;
+}
+.order_6{
+    position: absolute;
+    margin-left: 165px;
+    margin-top: 160px;
+}
+
+.table_orders{
+    border-radius: 100%;
+    background-color: #F9A443;
+    height:50px;
+    width:50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+
+}
+.table_name{
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 120px;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: rgb(79, 152, 174);
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding:14px 16px;
+    font-size: 17px;
+    width: 33%;
+}
+.tablink:hover {
+    background-color: #777;
+}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: rgb(4, 4, 21);
+    display: none;
+    padding: 20px;
+    padding-top: 60px;
+    min-height: 80vh;
+}
+.innerContainer{
+    padding:30px 0px 0px 30px;
+    background-color: #ffffff;
+    height: auto;
+    border-radius: 20px;
+
+}
+/* bottom bar */
+.bottombar{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    vertical-align: middle;
+    position: sticky;
+}
+.orders_list{
+    height:300px;
+    width:300px;
+    border:5px solid saddlebrown;
+    border-radius: 20px;
+    display:inline-block;
+    float:right;
+    position:absolute;
+    margin-bottom:5vh;
+    margin-top:5%;
+    padding:20px;
+}
+
+
+#Table {
+    background-color: #ECF0F3;
+}
+#Stock {
+    background-color: #ECF0F3;
+}
+#House {
+    background-color: #ECF0F3;
+}
+
+#lighthouse, #server, #time, #today, #combination, #security{
+    display: inline-block;
+    padding-right: 30px;
+}
+#security{
+    float: right;
+}
+#Tables_container_top{
+    padding-left: 5vw;
+    display: inline-block;
+    width:70%;
+
+}
+#Tables_container_bottom{
+    padding-left: 5vw;
+
+}
+#delivered_cb{
+    display:inline-block;
+}
+#paid_cb{
+    display: inline-block;
+}
+
+
+/* Responsive */
+@media screen and (min-height:327px) and (max-width: 1300px) {
+    .tables {
+        border-radius: 100%;
+        height: 200px;
+        width: 200px;
+        border: 3px solid #604533;
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        margin: 40px;
+        background-color: #604533;
+    }
+
+    .table_orders {
+        border-radius: 100%;
+        background-color: #F9A443;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 40px;
+    }
+
+    .order_1 {
+        position: absolute;
+        margin-left: 42px;
+        margin-top: 20px;
+    }
+
+    .order_2 {
+        position: absolute;
+        margin-left: 115px;
+        margin-top: 20px;
+    }
+
+    .order_3 {
+        position: absolute;
+        margin-left: 7px;
+        margin-top: 78px;
+    }
+
+    .order_4 {
+        position: absolute;
+        margin-left: 153px;
+        margin-top: 78px;
+    }
+
+    .order_5 {
+        position: absolute;
+        margin-left: 42px;
+        margin-top: 140px;
+    }
+
+    .order_6 {
+        position: absolute;
+        margin-left: 115px;
+        margin-top: 140px;
+    }
+
+
+    .table_name {
+        position: absolute;
+        margin-left: 65px;
+        margin-top: 100px;
+    }
+}
+
+    @media screen and (max-width: 1300px) {
+        .tables {
+            border-radius: 100%;
+            height:200px;
+            width:200px;
+            border: 3px solid #604533;
+            color:white;
+            font-weight: bold;
+            display:inline-block;
+            margin:20px;
+            background-color: #604533;
+        }
+        #Tables_container_top{
+            width:55%;
+        }
+    }
+
+    @media screen and (max-width: 930px) {
+        .tables {
+            border-radius: 100%;
+            height:150px;
+            width:150px;
+            border: 3px solid #604533;
+            color:white;
+            font-weight: bold;
+            display:inline-block;
+            margin:10px;
+            background-color: #604533;
+        }
+        #Tables_container_top{
+            width:55%;
+        }
+    }
