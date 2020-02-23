@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lighthouse on the Clifftop</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+</head>
+<body>
+<div id="menu">
+<button class="tablink" onclick="openPage('Beverage_Menu', this, 'red')" id="defaultOpen">Beverage Menu</button>
+<button class="tablink" onclick="openPage('Snack_Menu', this, 'green')">Snack Menu</button>
+
+<div id="Beverage_Menu" class="tabcontent">
+  <h3>Beverage Menu</h3>
+  <p>Drinks</p>
+</div>
+
+<div id="Snack_Menu" class="tabcontent">
+  <h3>Snack Menu</h3>
+  <p>Food</p>
+</div>
+
+
+
+</div>
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html> 
