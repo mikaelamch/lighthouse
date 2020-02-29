@@ -7,69 +7,88 @@
     <link rel="stylesheet" type="text/css" href="CSS/Bartender.css">
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="Scripts/Bartender.js"></script>
+    <script type="text/javascript" src="Scripts/Control.js" ></script>
 
 </head>
 
 <body>
+<div id="outerflexbox">
+    <div id="innerflexbox1">
+        <button class="tablink" id="bartender_table_view_txt" ></button>
+        <button class="tablink" id="bartender_stock_view_txt"></button>
+        <button class="tablink" id="bartender_house_view_txt"></button>
+    </div>
 
-<button class="tablink" id="bartender_table_view"  >Tables</button>
-<button class="tablink" id="bartender_stock_view">Stock</button>
-<button class="tablink" id="bartender_house_view" >On the House</button>
+    <div id="innerflexbox2">
+        <div id="Table" class="tabcontent">
+            <div class="innerContainer" id="Table_Inner_Container">
 
-<div id="Table" class="tabcontent">
-    <div class="innerContainer" id="Table_Inner_Container">
-        Dummy place order buttons:
-        <button class="place_order_btn">Table_1</button>
-        <button class="place_order_btn">Table_2</button>
-        <button class="place_order_btn">Table_3</button>
-        <button class="place_order_btn">Table_4</button>
-        <button class="place_order_btn">Table_5</button>
-        <button class="place_order_btn">Table_6</button>
-        <div id="Tables_container_top">
-            <div id="Table_1" class="tables">
-                <div class="table_name">TABLE 1</div>
-            </div>
-            <div id="Table_2" class="tables">
-                <div class="table_name">TABLE 2</div>
-            </div>
-            <div id="Table_3" class="tables">
-                <div class="table_name">TABLE 3</div>
-            </div>
+                <div id="Tables_container_top">
+                    <div id="Table_1" class="tables">
+                        <div class="table_name" id="table1_txt"></div>
+                    </div>
+                    <div id="Table_2" class="tables">
+                        <div class="table_name" id="table2_txt"></div>
+                    </div>
+                    <div id="Table_3" class="tables">
+                        <div class="table_name" id="table3_txt"></div>
+                    </div>
 
 
-            <div id="Table_4" class="tables">
-                <div class="table_name">TABLE 4</div>
+                    <div id="Table_4" class="tables">
+                        <div class="table_name" id="table4_txt"></div>
+                    </div>
+                    <div id="Table_5" class="tables">
+                        <div class="table_name" id="table5_txt"></div>
+                    </div>
+                    <div id="Table_6" class="tables">
+                        <div class="table_name" id="table6_txt"></div>
+                    </div>
+                </div>
             </div>
-            <div id="Table_5" class="tables">
-                <div class="table_name">TABLE 5</div>
-            </div>
-            <div id="Table_6" class="tables">
-                <div class="table_name">TABLE 6</div>
+            Dummy place order buttons:
+            <button class="place_order_btn">Table_1</button>
+            <button class="place_order_btn">Table_2</button>
+            <button class="place_order_btn">Table_3</button>
+            <button class="place_order_btn">Table_4</button>
+            <button class="place_order_btn">Table_5</button>
+            <button class="place_order_btn">Table_6</button>
+        </div>
+
+        <div id="Stock" class="tabcontent">
+            <div class="innerContainer">
             </div>
         </div>
 
+        <div id="House" class="tabcontent">
+            <div class="innerContainer"></div>
+        </div>
     </div>
-</div>
 
-<div id="Stock" class="tabcontent">
-    <div class="innerContainer">
+    <div id="innerflexbox3">
+        <div class="bottombar">
+            <div id="server">Mike 1237</div>
+            <!--<div id="time"></div>-->
+            <div id="today"></div>
+            <div id="combination_txt"></div>
+            <div id="bar_language_select">
+                <span id="bar_language_select_txt"></span>
+                <select class="lang">
+                    <option value="english" selected="selected" id="bar_english_txt"></option>
+                    <option value="swedish" id="bar_swedish_txt"></option>
+                </select>
+            </div>
+            <div id="security">
+                <button id="help_txt" ></button>
+            </div>
+
+
+
+
+        </div>
     </div>
-</div>
 
-<div id="House" class="tabcontent">
-    <div class="innerContainer"></div>
 </div>
-
-<div class="bottombar">
-    <div id="server">Mike 1237</div>
-    <div id="time"></div>
-    <div id="today"></div>
-    <div id="combination">Lock Combination: 069</div>
-    <div id="security">
-        <button id="help">Call Security</button>
-    </div>
-</div>
-
 </body>
 
 </html>

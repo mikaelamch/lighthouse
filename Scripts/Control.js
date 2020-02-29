@@ -4,7 +4,7 @@ $(function() {
     function populateText() {
         $.getJSON("JSON/Translation.json", function (translationJson) {
             //Get the selected language
-            var langSelection = document.getElementById("lang");
+            var langSelection = document.getElementsByClassName("lang")[0];
             var language = langSelection.options[langSelection.selectedIndex].value;
 
             //function to populate text based on language selection
@@ -16,7 +16,7 @@ $(function() {
         });
     }
     //change language selection event
-    $( "#lang" ).change(function() {
+    $( ".lang" ).change(function() {
         populateText();
     });
     populateText(); //Call once on loading the app

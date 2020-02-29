@@ -1,18 +1,55 @@
 {
   "english": {
+    "language_select_txt": "Språk:",
+    "english_txt": "Engelska",
+    "swedish_txt": "Svenska",
     "staff_login_btn_txt":"Staff login",
     "welcome-message_txt":"Welcome to the",
     "bar_name_txt":"<b>Lighthouse On The Cliff<b>",
     "welcome-message_cont_txt":"(A franchise of The Flying Dutchman)",
     "option_1_txt":" Click to order.",
-    "option_2_txt":" Are you a VIP customer? <br> Click to login."
+    "option_2_txt":" Are you a VIP customer? <br> Click to login.",
+
+    "bartender_table_view_txt": "Tables",
+    "bartender_stock_view_txt": "Stock",
+    "bartender_house_view_txt": "On the House",
+    "table1_txt": "TABLE 1",
+    "table2_txt": "TABLE 2",
+    "table3_txt": "TABLE 3",
+    "table4_txt": "TABLE 4",
+    "table5_txt": "TABLE 5",
+    "table6_txt": "TABLE 6",
+    "combination_txt": "Lock Combination: 069",
+    "bar_language_select_txt": "Språk:",
+    "bar_english_txt": "Engelska",
+    "bar_swedish_txt": "Svenska",
+    "help_txt": "Call Security"
+
   },
   "swedish": {
+    "language_select_txt": "Language:",
+    "english_txt": "English",
+    "swedish_txt": "Swedish",
     "staff_login_btn_txt":"Personalinloggning",
     "welcome-message_txt":"Välkommen till",
     "bar_name_txt":"<b>Fyr På Klippan<b>",
     "welcome-message_cont_txt":"(En franchise av The Flying Dutchman)",
     "option_1_txt":" Klicka för att beställa.",
-    "option_2_txt":" Är du VIP-kund? <br> Klicka för att logga in."
+    "option_2_txt":" Är du VIP-kund? <br> Klicka för att logga in.",
+
+    "bartender_table_view_txt": "Tabeller",
+    "bartender_stock_view_txt": "Stock",
+    "bartender_house_view_txt": "På huset",
+    "table1_txt": "BORD 1",
+    "table2_txt": "BORD 2",
+    "table3_txt": "BORD 3",
+    "table4_txt": "BORD 4",
+    "table5_txt": "BORD 5",
+    "table6_txt": "BORD 6",
+    "combination_txt": "Låskombination: 069",
+    "bar_language_select_txt": "Language:",
+    "bar_english_txt": "English",
+    "bar_swedish_txt": "Swedish",
+    "help_txt": "Ring säkerhet"
   }
 }
