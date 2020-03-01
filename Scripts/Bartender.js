@@ -175,6 +175,7 @@ $(function() { //executes only after the final page with all components are load
                 if(ordersMatrix[tNum][oNum][0] == 1 && ordersMatrix[tNum][oNum][2] != 1) { //'order placed status' is 1 and 'order paid status' is not 1
                     var tableNum = tNum+1;
                     displayOrderOnLoad('Table_' + tableNum, tNum);
+                    break;
                 }
             }
         }

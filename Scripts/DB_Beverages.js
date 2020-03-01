@@ -1,7 +1,7 @@
 /**
 * @file This file contains the database of the beverages in the form of an Array of JavaScript Objects
 * @author Alessandra
-* 
+*
 * The JavaScript Objects originally present in the provided DB have been modified. The current structure of a beverage object is:
 *
 * id: {Number} unique id for each beverage
@@ -13,7 +13,7 @@
 * beverageType: {String} type of beverage (beer/wine/cocktail/non-alcoholic)
 * name: {String} name of the beverage
 * category: {String} further details regarding the category of the beverage
-* priceWithVat: {Number} price in SEK (:-) of the beverage with tax 
+* priceWithVat: {Number} price in SEK (:-) of the beverage with tax
 * introduced: {Date} the date the beverage was put on the market
 * countryOfOrigin: {String} name of the country of origin
 * producer: {String} name of the producer
@@ -27,12 +27,12 @@
 * red: {Boolean} true - only if red wine
 * white: {Boolean} true - only if white wine
 * lastDelivery: {Date} last received delivery
-* 
+*
 */
 [
     // BEERS (4)
-    { 
-        "id": 1, 
+    {
+        "id": 1,
         "packaging": "bottle",
         "volumeMl": 330,
         "pricePerLitre": null,
@@ -42,7 +42,7 @@
         "name": "Heineken",
         "category": "Ljus lager",
         "priceWithVat": 13.90,
-        "introduced": new Date(1992, 04, 21),
+        "introduced": new Date(1992, 4, 21),
         "countryOfOrigin": "Netherlands",
         "producer": "Spendrups",
         "provider": "Spendrups Bryggeri AB",
@@ -54,10 +54,10 @@
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2020, 01, 11)
+        "lastDelivery": new Date(2020, 1, 11)
     },
     {
-        "id": 2, 
+        "id": 2,
         "packaging": "bottle",
         "volumeMl": 330,
         "pricePerLitre": null,
@@ -67,7 +67,7 @@
         "name": "Peroni Nastro Azzurro",
         "category": "",
         "priceWithVat": 15.90,
-        "introduced": new Date(2001, 08, 06),
+        "introduced":new Date(2008, 8, 6),
         "countryOfOrigin": "Italy",
         "producer": "Birra Peroni",
         "provider": "SAB Miller Brands Europe AS Tj",
@@ -77,7 +77,7 @@
         "glutenFree": false,
         "lactoseFree": false,
         "kosher": false,
-        "lastDelivery": new Date(2019, 12, 03)
+        "lastDelivery": new Date(2019, 12, 3)
     },
     {
         "id": 3, 
@@ -90,7 +90,7 @@
         "name": "Bombardier",
         "category": "",
         "priceWithVat": 20.90,
-        "introduced": new Date(2008, 10, 01),
+        "introduced": new Date(2008, 10, 1),
         "countryOfOrigin": "England",
         "producer": "Wells & Young's Brewing Compan",
         "provider": "TOMP Beer Wine & Spirits AB",
@@ -113,7 +113,7 @@
         "name": "Green's Dark",
         "category": "",
         "priceWithVat": 26.50,
-        "introduced": new Date(2013, 09, 02),
+        "introduced": new Date(2013, 9, 2),
         "countryOfOrigin": "Belgien",
         "producer": "Green's Gluten Free Beers",
         "provider": "Winemarket Nordic AB",
@@ -123,7 +123,7 @@
         "glutenFree": true,
         "lactoseFree": false,
         "kosher": false,
-        "lastDelivery": new Date(2019, 11, 03)
+        "lastDelivery": new Date(2019, 11, 3)
     },
     // WINES (2)
     {
@@ -137,7 +137,7 @@
         "name": "Lupi Reali",
         "category": "Montepulciano d'Abruzzo",
         "priceWithVat": 69,
-        "introduced": new Date(2013, 04, 02),
+        "introduced": new Date(2013, 4, 2),
         "countryOfOrigin": "Italy",
         "producer": "Enoitalia",
         "provider": "The WineAgency Sweden AB",
@@ -149,7 +149,7 @@
         "kosher": false,
         "red": true,
         "white": false,
-        "lastDelivery": new Date(2020, 02, 13)
+        "lastDelivery": new Date(2020, 2, 13)
     },
     {
         "id": 6, 
@@ -162,7 +162,7 @@
         "name": "Hafner",
         "category": "Chardonnay",
         "priceWithVat": 119,
-        "introduced": new Date(2004, 03, 15),
+        "introduced": new Date(2004, 3, 15),
         "countryOfOrigin": "Burgenland, Lake Neusiedl",
         "producer": "Hafner",
         "provider": "Haugen-Gruppen AB",
@@ -174,7 +174,7 @@
         "kosher": false,
         "red": false,
         "white": true,
-        "lastDelivery": new Date(2020, 01, 12) 
+        "lastDelivery": new Date(2020, 1, 12)
     },
     // COCKTAILS (2)
     {
@@ -188,7 +188,7 @@
         "name": "Znaps",
         "category": "Strawberry Daiquiri",
         "priceWithVat": 160,
-        "introduced": new Date(2013, 06, 01),
+        "introduced": new Date(2013, 6, 1),
         "countryOfOrigin": "Sweden",
         "producer": "Znaps Sweden AB",
         "provider": "Znaps Sweden AB",
@@ -213,7 +213,7 @@
         "name": "Evil Twin",
         "category": "Molotov Cocktail Imperial India Pale Ale",
         "priceWithVat": 50.60,
-        "introduced": new Date(2013, 10, 01),
+        "introduced": new Date(2013, 10, 1),
         "countryOfOrigin": "Sweden",
         "producer": "Evil Twin Brewing",
         "provider": "Galatea Spirits AB",
@@ -239,7 +239,7 @@
         "name": "Coca-Cola Original",
         "category": "",
         "priceWithVat": 50.60,
-        "introduced": new Date(1886, 08, 05),
+        "introduced": new Date(1886, 8, 5),
         "countryOfOrigin": "USA",
         "producer": "Coca-Cola Company",
         "provider": "Coca-Cola AB",
@@ -264,7 +264,7 @@
         "name": "Maglehem",
         "category": "Must",
         "priceWithVat": 21.90,
-        "introduced": new Date(2014, 03, 01),
+        "introduced": new Date(2014, 3, 1),
         "countryOfOrigin": "Sweden",
         "producer": "Maglehems musteri",
         "provider": "Maglehems musteri AB",
@@ -276,6 +276,6 @@
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2020, 01, 21) 
-    },
+        "lastDelivery": new Date(2020, 1, 21)
+    }
 ];
