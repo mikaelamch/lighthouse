@@ -59,7 +59,7 @@
     {
         "id": 2, 
         "packaging": "bottle",
-        "volumeMl": null,
+        "volumeMl": 330,
         "pricePerLitre": null,
         "stockQuantity" : 50,
         "stockQuantityMl": null,
@@ -82,7 +82,7 @@
     {
         "id": 3, 
         "packaging": "bottle",
-        "volumeMl": null,
+        "volumeMl": 500,
         "pricePerLitre": null,
         "stockQuantity" : 78,
         "stockQuantityMl": null,
@@ -105,7 +105,7 @@
     {
         "id": 4, 
         "packaging": "bottle",
-        "volumeMl": null,
+        "volumeMl": 330,
         "pricePerLitre": null,
         "stockQuantity" : 58,
         "stockQuantityMl": null,
@@ -233,7 +233,7 @@
         "packaging": "can",
         "volumeMl": 330,
         "pricePerLitre": null,
-        "stockQuantity" : 7.90,
+        "stockQuantity" : 79,
         "stockQuantityMl": null,
         "beverageType": "non-alcoholic",
         "name": "Coca-Cola Original",
