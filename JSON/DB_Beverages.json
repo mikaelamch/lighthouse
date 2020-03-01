@@ -1,39 +1,6 @@
-/**
-* @file This file contains the database of the beverages in the form of an Array of JavaScript Objects
-* @author Alessandra
-* 
-* The JavaScript Objects originally present in the provided DB have been modified. The current structure of a beverage object is:
-*
-* id: {Number} unique id for each beverage
-* packaging: {String} container available for the bevarage (bottle/can/tap)
-* volumeMl: {Number | null} only if packaging is "bottle"/"can", otherwise null
-* pricePerLitre: {Number | null} only if packaging is "tap", otherwise null
-* stockQuantity: {Number | null} only if packaging is "bottle"/"can" - quantity left in the stock - otherwise null
-* stockQuantityMl: {Number | null} only if packaging is "tap" - quantity left in the stock - otherwise null
-* beverageType: {String} type of beverage (beer/wine/cocktail/non-alcoholic)
-* name: {String} name of the beverage
-* category: {String} further details regarding the category of the beverage
-* priceWithVat: {Number} price in SEK (:-) of the beverage with tax 
-* introduced: {Date} the date the beverage was put on the market
-* countryOfOrigin: {String} name of the country of origin
-* producer: {String} name of the producer
-* provider: {String} name of the provider in Sweden
-* productionYear: {Date | null} year of production, otherwise null
-* alcoholStrength: {Number} percentage (%) of alcohol in the beverage
-* organic: {Boolean}
-* glutenFree: {Boolean}
-* lactoseFree: {Boolean}
-* kosher: {Boolean}
-* red: {Boolean} true - only if red wine
-* white: {Boolean} true - only if white wine
-* lastDelivery: {Date} last received delivery
-* 
-*/
-drinks = {
-    "drinks": [
-        // BEERS (4) 
-    {
-        "id": 1, 
+{
+    "1": {
+        "id": 1,
         "packaging": "bottle",
         "volumeMl": 330,
         "pricePerLitre": null,
@@ -43,7 +10,7 @@ drinks = {
         "name": "Heineken",
         "category": "Ljus lager",
         "priceWithVat": 13.90,
-        "introduced": new Date(1992, 04, 21),
+        "introduced": "1992-04-21",
         "countryOfOrigin": "Netherlands",
         "producer": "Spendrups",
         "provider": "Spendrups Bryggeri AB",
@@ -55,9 +22,9 @@ drinks = {
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2020, 01, 11)
+        "lastDelivery": "2020-01-11"
     },
-    {
+    "2": {
         "id": 2, 
         "packaging": "bottle",
         "volumeMl": 330,
@@ -68,7 +35,7 @@ drinks = {
         "name": "Peroni Nastro Azzurro",
         "category": "",
         "priceWithVat": 15.90,
-        "introduced": new Date(2001, 08, 06),
+        "introduced": "2001-08-06",
         "countryOfOrigin": "Italy",
         "producer": "Birra Peroni",
         "provider": "SAB Miller Brands Europe AS Tj",
@@ -78,9 +45,9 @@ drinks = {
         "glutenFree": false,
         "lactoseFree": false,
         "kosher": false,
-        "lastDelivery": new Date(2019, 12, 03)
+        "lastDelivery": "2019-12-03"
     },
-    {
+    "3": {
         "id": 3, 
         "packaging": "bottle",
         "volumeMl": 500,
@@ -91,7 +58,7 @@ drinks = {
         "name": "Bombardier",
         "category": "",
         "priceWithVat": 20.90,
-        "introduced": new Date(2008, 10, 01),
+        "introduced": "2008-10-01",
         "countryOfOrigin": "England",
         "producer": "Wells & Young's Brewing Compan",
         "provider": "TOMP Beer Wine & Spirits AB",
@@ -101,9 +68,9 @@ drinks = {
         "glutenFree": false,
         "lactoseFree": false,
         "kosher": false,
-        "lastDelivery": new Date(2019, 11, 29)
+        "lastDelivery": "2019-11-29"
     },
-    {
+    "4" : {
         "id": 4, 
         "packaging": "bottle",
         "volumeMl": 330,
@@ -114,7 +81,7 @@ drinks = {
         "name": "Green's Dark",
         "category": "",
         "priceWithVat": 26.50,
-        "introduced": new Date(2013, 09, 02),
+        "introduced": "2013-09-02",
         "countryOfOrigin": "Belgien",
         "producer": "Green's Gluten Free Beers",
         "provider": "Winemarket Nordic AB",
@@ -124,10 +91,9 @@ drinks = {
         "glutenFree": true,
         "lactoseFree": false,
         "kosher": false,
-        "lastDelivery": new Date(2019, 11, 03)
+        "lastDelivery": "2019-11-03"
     },
-        // WINES (2)
-    {
+    "5": {
         "id": 5, 
         "packaging": "bottle",
         "volumeMl": 750,
@@ -138,11 +104,11 @@ drinks = {
         "name": "Lupi Reali",
         "category": "Montepulciano d'Abruzzo",
         "priceWithVat": 69,
-        "introduced": new Date(2013, 04, 02),
+        "introduced": "2013-04-02",
         "countryOfOrigin": "Italy",
         "producer": "Enoitalia",
         "provider": "The WineAgency Sweden AB",
-        "productionYear": new Date(2013),
+        "productionYear": "2013",
         "alcoholStrength": 12.5,
         "organic": true,
         "glutenFree": true,
@@ -150,9 +116,9 @@ drinks = {
         "kosher": false,
         "red": true,
         "white": false,
-        "lastDelivery": new Date(2020, 02, 13)
+        "lastDelivery": "2020-02-13"
     },
-    {
+    "6": {
         "id": 6, 
         "packaging": "bottle",
         "volumeMl": 750,
@@ -163,11 +129,11 @@ drinks = {
         "name": "Hafner",
         "category": "Chardonnay",
         "priceWithVat": 119,
-        "introduced": new Date(2004, 03, 15),
+        "introduced": "2004-03-15",
         "countryOfOrigin": "Burgenland, Lake Neusiedl",
         "producer": "Hafner",
         "provider": "Haugen-Gruppen AB",
-        "productionYear": new Date(2011),
+        "productionYear": "2011",
         "alcoholStrength": 13,
         "organic": false,
         "glutenFree": true,
@@ -175,10 +141,9 @@ drinks = {
         "kosher": false,
         "red": false,
         "white": true,
-        "lastDelivery": new Date(2020, 01, 12) 
+        "lastDelivery": "2020-01-12" 
     },
-        // COCKTAILS (2)
-    {
+    "7": {
         "id": 7, 
         "packaging": "bottle",
         "volumeMl": 180,
@@ -189,7 +154,7 @@ drinks = {
         "name": "Znaps",
         "category": "Strawberry Daiquiri",
         "priceWithVat": 160,
-        "introduced": new Date(2013, 06, 01),
+        "introduced": "2013-06-01",
         "countryOfOrigin": "Sweden",
         "producer": "Znaps Sweden AB",
         "provider": "Znaps Sweden AB",
@@ -201,9 +166,9 @@ drinks = {
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2019, 12, 12) 
+        "lastDelivery": "2019-12-12" 
     },
-    {
+    "8": {
         "id": 8, 
         "packaging": "bottle",
         "volumeMl": 180,
@@ -214,7 +179,7 @@ drinks = {
         "name": "Evil Twin",
         "category": "Molotov Cocktail Imperial India Pale Ale",
         "priceWithVat": 50.60,
-        "introduced": new Date(2013, 10, 01),
+        "introduced": "2013-10-01",
         "countryOfOrigin": "Sweden",
         "producer": "Evil Twin Brewing",
         "provider": "Galatea Spirits AB",
@@ -226,10 +191,9 @@ drinks = {
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2019, 12, 12) 
+        "lastDelivery": "2019-12-12" 
     },
-        // NON-ALCOHOLIC DRINKS
-    {
+    "9": {
         "id": 9, 
         "packaging": "can",
         "volumeMl": 330,
@@ -240,7 +204,7 @@ drinks = {
         "name": "Coca-Cola Original",
         "category": "",
         "priceWithVat": 50.60,
-        "introduced": new Date(1886, 08, 05),
+        "introduced": "1886-08-05",
         "countryOfOrigin": "USA",
         "producer": "Coca-Cola Company",
         "provider": "Coca-Cola AB",
@@ -252,9 +216,9 @@ drinks = {
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2019, 12, 12) 
+        "lastDelivery": "2019-12-12" 
     },
-    {
+    "10": {
         "id": 10, 
         "packaging": "bottle",
         "volumeMl": 630,
@@ -265,7 +229,7 @@ drinks = {
         "name": "Maglehem",
         "category": "Must",
         "priceWithVat": 21.90,
-        "introduced": new Date(2014, 03, 01),
+        "introduced": "2014-03-01",
         "countryOfOrigin": "Sweden",
         "producer": "Maglehems musteri",
         "provider": "Maglehems musteri AB",
@@ -277,6 +241,6 @@ drinks = {
         "kosher": false,
         "red": false,
         "white": false,
-        "lastDelivery": new Date(2020, 01, 21) 
-    }]
+        "lastDelivery": "2020-01-21" 
+    }
 }
