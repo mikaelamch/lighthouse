@@ -1,0 +1,122 @@
+/* @author Alessandra */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    
+}
+
+.menu-card {
+    flex: 1;
+    margin: 15px;
+    border: 2px black solid;
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 5%;
+    border-color: #bdbdbd;
+    /* Grid view */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "title title"
+        "category volume"
+        "strength allergy"
+        "price price"
+        "type type";
+}
+
+.menu-card > div {
+    flex: 1;
+}
+
+.menu-card-title {
+    grid-area: title;
+}
+
+.menu-card-title > h3 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.menu-card-category {
+    grid-area: category;
+}
+
+.menu-card-category > h4 {
+    font-size: 1.3em;
+    color: #949494;
+    font-weight: 500;
+}
+
+.menu-card-volume {
+    grid-area: volume;
+    
+}
+
+.menu-card-volume > p {
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+.menu-card-strength {
+    grid-area: strength;
+    background-color: rgb(255, 123, 123);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* To center */
+    display: flex;
+}
+
+.menu-card-allergies {
+    grid-area: allergy;
+
+}
+
+.menu-allergy-list {
+    list-style: none;
+}
+
+.menu-allergy-item {
+    display: inline;
+}
+
+.menu-card-strength > span {
+    color: white;
+    /* To center */
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.2em;
+   
+}
+
+.menu-allergy-item > img {
+    width: 60px;
+    height: 60px;
+}
+
+.menu-card-price {
+    grid-area: price;
+    text-align: right;
+}
+
+.menu-card-price > p {
+    font-size: 2em;
+    
+}
+
+.menu-card-type {
+    grid-area: type;
+    border: 2px solid rgb(102, 219, 121);
+    border-radius: 5%;
+    display: flex;
+}
+
+.menu-card-type > p {
+    margin: auto;
+    font-weight: bold;
+}
