@@ -23,7 +23,12 @@
     "bar_language_select_txt": "Språk:",
     "bar_english_txt": "Engelska",
     "bar_swedish_txt": "Svenska",
-    "help_txt": "Call Security"
+    "help_txt": "Call Security",
+
+    "beer_type_text":  "Beer",
+    "wine_type_text":  "Wine",
+    "cocktail_type_text":  "Cocktail",
+    "nonalch_type_text":  "Non-alcoholic"
 
   },
   "swedish": {
