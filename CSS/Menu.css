@@ -71,3 +71,9 @@ body, html {
 #Group_Order {background-color: yellow;}
 #inner-container {background-color: pink;}
 
+
+#dropDiv {
+  height: 20vh;
+  width: 100vw;
+  background-color: rgb(255, 198, 198);
+}

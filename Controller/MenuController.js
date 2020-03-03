@@ -27,8 +27,24 @@ $(() => {
         // The mechanics of this are not important here, it's the View's job - The controller just passes the data to show
         arrMenuItems.forEach(m => {
             let c = view.createItemCard(m._getId(), m._getName(), m._getCategory(), m._getBeverageType(), m._getVolumeMl(), m._getAlcoholStrength(), m._getAllergies(), m._getKosher(), m._getWineColor(), m._getPriceWithVat());
-            view.append(c);            
+            view.append(c);
         });
 
+
+        $(function () {
+            $(".menu-card").draggable({
+                revert: "invalid",
+                helper: "clone" 
+            });
+            $("#dropDiv").droppable({
+                drop: function (event, ui) {
+                    $(this)
+                        .find("p")
+                        .html("Dropped!");
+                }
+            });
+        });
     });
+
+
 });
