@@ -28,14 +28,15 @@ class MenuDynamicView {
     createItemCard(id, name, category, beverageType, volumeMl, alcoholStrength, allergies, kosher, wineColor, priceWithVat) {
         let cardTemplate = `
             <div id="${id}" class="menu-card">
-                <div class="menu-card-title">
-                    <h3 id=card-title>${name}</h3>
-                </div>
-                <div class="menu-card-category">
-                    <h4 id="card-category">${category}</h4>
-                </div>
-                <div class="menu-card-strength"><span id="card-strength">${alcoholStrength}%</span></div>
-                <div class="menu-card-allergies">`;
+                <div class="menu-card-content">
+                    <div class="menu-card-title">
+                        <h3 id=card-title>${name}</h3>
+                    </div>
+                    <div class="menu-card-category">
+                        <h4 id="card-category">${category}</h4>
+                    </div>
+                    <div class="menu-card-strength"><span id="card-strength">${alcoholStrength}%</span></div>
+                    <div class="menu-card-allergies">`;
 
         // If the product has specific characteristics, a string with an unordered list + list items will be concatenated to the cardTemplate one
         if (allergies) {
@@ -57,14 +58,15 @@ class MenuDynamicView {
                 }
             });
 
-            allergyString += `</ul>`;
+            allergyString += `</ul></div>`;
             cardTemplate += allergyString;
         }
 
         cardTemplate += `
-                <div class="menu-card-volume"><p>${volumeMl}ml</p></div>
-                <div class="menu-card-price"><p>${priceWithVat}:-</p></div>
-                <div class="menu-card-type"><p>${beverageType}</p></div>
+                    <div class="menu-card-volume"><p>${volumeMl}ml</p></div>
+                    <div class="menu-card-price"><p>${priceWithVat}:-</p></div>
+                    <div class="menu-card-type"><p>${beverageType}</p></div>
+                </div>
             </div>`
 
         return cardTemplate;
