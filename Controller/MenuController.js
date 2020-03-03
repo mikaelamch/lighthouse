@@ -7,14 +7,16 @@
 import MenuItemModel from '../Model/MenuItemModel.js';
 import MenuDynamicView from '../View/MenuDynamicView.js';
 
+// Array of menu items (instances of MenuItemModel) from the DB
+const arrMenuItems = [];
+
 $(() => {
     // Populate an array of objects from the JSON database "../Scripts/DB_Beverages.js"
     $.getJSON("../JSON/DB_Beverages.json", DB => {
         // Create an instance of the MenuDynamicView class, this view will be what is shown on the screen in the menu page
         let view = new MenuDynamicView();
-        // Array of menu items (instances of MenuItemModel) from the DB
+       
         // It will get populated when cycling through the array
-        let arrMenuItems = [];
         for (let i in DB) {
             // Create an instance of the MenuItemModel
             let m = new MenuItemModel(DB[i].id, DB[i].name, DB[i].category, DB[i].beverageType, DB[i].volumeMl, DB[i].alcoholStrength, DB[i].organic, DB[i].glutenFree, DB[i].lactoseFree, DB[i].kosher, DB[i].red, DB[i].white, DB[i].priceWithVat);
@@ -30,21 +32,30 @@ $(() => {
             view.append(c);
         });
 
-
-        $(function () {
-            $(".menu-card").draggable({
-                revert: "invalid",
-                helper: "clone" 
-            });
-            $("#dropDiv").droppable({
-                drop: function (event, ui) {
-                    $(this)
-                        .find("p")
-                        .html("Dropped!");
-                }
-            });
+        
+        // DRAG-AND-DROP
+        $(".menu-card").draggable({
+            revert: "invalid",
+            helper: "clone",
+            start: function(event, ui) {
+                $(ui.helper).css('width', "100%");
+            }
         });
+        $("#dropDiv").droppable({
+            drop: function (event, ui) {
+                let name = ui.draggable.find('.menu-card-title').text();
+                $("<div></div>")
+                    .html(name)
+                    .appendTo($(this));
+            }
+        });
+        
     });
 
 
 });
+
+
+function getNameFromId(id) {
+    return arrMenuItems.find(x => x.id === id)._getName();
+}
