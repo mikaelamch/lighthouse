@@ -133,6 +133,15 @@ body, html {
 .paid_cb{
     display: inline-block;
 }
+.flexbox4_children{
+    margin-top:50px;
+    flex: 1;
+    height:100px;
+}
+.flexbox4_titles{
+    width:100%;
+    text-align: center;
+}
 
 #outerflexbox{
     display: flex;
@@ -178,6 +187,12 @@ body, html {
 #Tables_container_bottom{
     padding-left: 2vw;
 
+}
+#flexbox4{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:  flex-start;
 }
 
 
