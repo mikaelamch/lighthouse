@@ -27,7 +27,7 @@ function localStorageGetObj(key) {
     return JSON.parse(localStorage.getItem(key))
 }
 
-//hardcoded orders 1-8 to be added to view when order is placed
+//hardcoded orders 1-6 to be added to view when order is placed
 var ordersArray= ['<div class="table_orders order_1" onClick="viewOrderItems(this, 1)">1</div>',
     '<div class="table_orders order_2" onClick="viewOrderItems(this, 2)">2</div>',
     '<div class="table_orders order_3" onClick="viewOrderItems(this, 3)">3</div>',
