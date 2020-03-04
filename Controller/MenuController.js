@@ -41,14 +41,23 @@ $(() => {
                 $(ui.helper).css('width', "100%");
             }
         });
+        // When dropping the card, a new div 
         $("#dropDiv").droppable({
             drop: function (event, ui) {
+                // PSEUDO CODE: create an instance of the OrderModel
+                // Add to the instance the menu item
+                // Send the instance of the OrderModel to the view (of the Order)
+                // In the view THINGS will get appended based on the data that was exchanged
                 let name = ui.draggable.find('.menu-card-title').text();
-                $("<div></div>")
+                $("<div></div>") /** @todo order view */
                     .html(name)
                     .appendTo($(this));
             }
         });
+
+
+        // PSEUDO CODE: handlers for the three buttons
+        // Prev Next and Finish
         
     });
 
@@ -57,5 +66,5 @@ $(() => {
 
 
 function getNameFromId(id) {
-    return arrMenuItems.find(x => x.id === id)._getName();
+    return arrMenuItems.find(x => x._getId() === id)._getName();
 }
