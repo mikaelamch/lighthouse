@@ -12,7 +12,8 @@ const arrMenuItems = [];
 
 $(() => {
     // Populate an array of objects from the JSON database "../Scripts/DB_Beverages.js"
-    $.getJSON("../JSON/DB_Beverages.json", DB => {
+    
+    $.getJSON("JSON/DB_Beverages.json", DB => {
         // Create an instance of the MenuDynamicView class, this view will be what is shown on the screen in the menu page
         let view = new MenuDynamicView();
        
