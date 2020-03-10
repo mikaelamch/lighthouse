@@ -6,6 +6,7 @@
     <title>Bartender Profile</title>
     <link rel="stylesheet" type="text/css" href="CSS/Bartender.css">
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="Scripts/Bartender.js"></script>
     <script type="text/javascript" src="Scripts/Control.js" ></script>
 
@@ -21,7 +22,7 @@
 
     <div id="innerflexbox2">
         <div id="Table" class="tabcontent">
-            <div class="innerContainer" id="Table_Inner_Container">
+            <div class="innerContainer tablecontainer" id="Table_Inner_Container">
 
                 <div id="Tables_container_top">
                     <div id="Table_1" class="tables">
@@ -57,19 +58,22 @@
 
         <div id="Stock" class="tabcontent">
             <div class="innerContainer">
-                <div id="flexbox4">
+                <div class="flexbox4">
+                    <div id="stock_sl_no" class="flexbox4_children">
+                        <div class="flexbox4_titles">Sl. No.</div>
+                    </div>
                     <div id="stock_item" class="flexbox4_children">
                         <div class="flexbox4_titles">Item</div>
                     </div>
                     <div id="stock_number" class="flexbox4_children">
                         <div class="flexbox4_titles">In Stock</div>
                     </div>
-                    <div id="stock_requirement" class="flexbox4_children">
+                    <!--<div id="stock_requirement" class="flexbox4_children">
                         <div class="flexbox4_titles">Requirement</div>
                     </div>
                     <div id="stock_place_order" class="flexbox4_children">
                         <div class="flexbox4_titles">Place Order</div>
-                    </div>
+                    </div>-->
                     <div id="stock_disable" class="flexbox4_children">
                         <div class="flexbox4_titles">Disable</div>
                     </div>
@@ -79,7 +83,24 @@
         </div>
 
         <div id="House" class="tabcontent">
-            <div class="innerContainer"></div>
+            <div class="innerContainer">
+                <div id="house_menu_list">
+                    <div class="flexbox4">
+                        <div id="house_stock_sl_no" class="flexbox4_children">
+                            <div class="flexbox4_titles">Sl. No.</div>
+                        </div>
+                        <div id="house_stock_item" class="flexbox4_children">
+                            <div class="flexbox4_titles">Menu Item</div>
+                        </div>
+                        <div id="on_the_house_items" class="flexbox4_children">
+                            <div class="flexbox4_titles">Given on the house today</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     </div>
 

@@ -89,7 +89,7 @@ function handlePaidClick(cb) {
     }
 }
 
-function handleDeliveredClick(cb) {
+function handleDeliveredClick(cb) { //called when delivered checkbox is clicked
     var cbParents = cb.id.split("-"); //get the checkbox parent table and order number from its id
     var tableNum = cbParents[1].split("_")[1];
     var orderNum = cbParents[2];
@@ -100,6 +100,28 @@ function handleDeliveredClick(cb) {
     var paidCBId = 'paid-'+cbParents[1]+'-'+ orderNum;
     document.getElementById(paidCBId).disabled = false;
 }
+
+function handleDisableClick(cb){ //adds disabled css effects to items
+    var itemId = cb.id.split('_')[0];
+    var slNoField =  document.getElementById(itemId + '_item_sl');
+    var itemName = document.getElementById(itemId + '_item_name');
+    var stockQty = document.getElementById(itemId + '_sqty');
+
+    if(cb.checked){
+        //add disable class
+
+        slNoField.classList.add("disable");
+        itemName.classList.add("disable");
+        stockQty.classList.add("disable");
+    } else{
+        //remove disable class
+        slNoField.classList.remove("disable");
+        itemName.classList.remove("disable");
+        stockQty.classList.remove("disable");
+    }
+
+}
+
 
 //utility method to compare 2 arrays, can be moved out of file if required
 function isEqual(array1,array2)
@@ -212,5 +234,49 @@ $(function() { //executes only after the final page with all components are load
         }
 
     }
+   /* Read from DB_Beverages.json to populate data in the Stock tab for bartender view*/
+    $.getJSON("JSON/DB_Beverages.json", function (items) {
+
+        //structure to insert into view
+        var stockSlNo = document.getElementById('stock_sl_no'); // Stock item serial number column
+        var stockItemsColumn = document.getElementById('stock_item'); //Stock item name column
+        var stockNumberColumn = document.getElementById('stock_number'); //Stock number column
+        var stockDisableColumn = document.getElementById('stock_disable'); //column for item disable checkboxes
+
+        var houseStockSlNo = document.getElementById('house_stock_sl_no'); //Column for Stock item serial num in the 'On the House' tab
+        var houseStockItemsColumn = document.getElementById('house_stock_item');//Column for Stock item name in the 'On the House' tab
+
+        Object.values(items).forEach(function (item) {
+            /*Insert items read from json file into Stock tab view */
+            stockSlNo.insertAdjacentHTML('beforeend', '<div id='+item.id+'_item_sl class="flexbox4_sl_no">'+item.id + '. </div>');
+            stockItemsColumn.insertAdjacentHTML('beforeend', '<div id='+item.id+'_item_name class="flexbox4_items_column1">'+item.name + '</div>');
+            stockNumberColumn.insertAdjacentHTML('beforeend', '<div id='+item.id+'_sqty class="flexbox4_items_column2">'+item.stockQuantity + '</div>');
+            stockDisableColumn.insertAdjacentHTML('beforeend', '<div class="flexbox4_items_column3">' +
+                '<input type="checkbox" id='+item.id+'_item_cb onclick=\'handleDisableClick(this)\'> </div>');
+            /*Insert items read from json file into 'On the house' tab view */
+            houseStockSlNo.insertAdjacentHTML('beforeend', '<div class="flexbox4_sl_no">'+item.id + '. </div>');
+            houseStockItemsColumn.insertAdjacentHTML('beforeend', '<div class="flexbox4_items_column1">'+item.name + '</div>');
+        });
+
+        // DRAG-AND-DROP (code re-used from menu view controller file)
+        $(".flexbox4_items_column1").draggable({
+            revert: "invalid",
+            helper: "clone",
+            start: function(event, ui) {
+                $(ui.helper).css('font-size', "x-large");
+            }
+        });
+        // When dropping the card, a new div is added
+        $("#on_the_house_items").droppable({
+            drop: function (event, ui) {
+                let name = ui.draggable.find('.flexbox4_items_column1').prevObject["0"].innerText;
+                $("<div></div>")
+                    .html(name)
+                    .appendTo($(this));
+            }
+        });
+        //need to write items given away on the house to local storage
+    });
+
 
 });
