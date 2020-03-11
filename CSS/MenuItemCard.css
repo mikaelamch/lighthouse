@@ -60,11 +60,11 @@ body {
     grid-area: allergy;
 }
 
-.menu-allergy-list {
+.menu-special-list {
     list-style: none;
 }
 
-.menu-allergy-item {
+.menu-special-item {
     display: inline;
 }
 
@@ -72,7 +72,7 @@ body {
     
 }
 
-.menu-allergy-item>img {
+.menu-special-item>img {
     width: 60px;
     height: 60px;
 }

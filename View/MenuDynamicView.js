@@ -32,21 +32,25 @@ class MenuDynamicView {
         // If the product has specific characteristics, a string with an unordered list + list items will be concatenated to the cardTemplate one
         if (m._getSpecialProperties().length > 0) {
             let allergies = m._getSpecialProperties();
-            let allergyString = `<ul class="menu-allergy-list">`
+            let allergyString = `<ul class="menu-special-list">`
 
             allergies.forEach(a => {
                 switch (a) {
-                    case "organic":
-                        allergyString += `<li class="menu-allergy-item"><img src="/Images/Organic-512.png" alt="organic"></li>`;
+                    case "o":
+                        allergyString += `<li class="menu-special-item"><img src="/Images/Organic-512.png" alt="organic"></li>`;
                         break;
 
-                    case "glutenFree":
-                        allergyString += `<li class="menu-allergy-item"><img src="/Images/Gluten_free-512.png" alt="gluten free"></li>`;
+                    case "g":
+                        allergyString += `<li class="menu-special-item"><img src="/Images/Gluten_free-512.png" alt="gluten free"></li>`;
                         break;
 
-                    case "lactoseFree":
-                        allergyString += `<li class="menu-allergy-item"><img src="/Images/Dairy_free-512.png" alt="lactose free"></li>`;
+                    case "l":
+                        allergyString += `<li class="menu-special-item"><img src="/Images/Dairy_free-512.png" alt="lactose free"></li>`;
                         break;
+
+                    // case "k":
+                    //     allergyString += `<li class="menu-special-item"><img src="/Images/Dairy_free-512.png" alt="lactose free"></li>`;
+                    //     break;
                 }
             });
 
