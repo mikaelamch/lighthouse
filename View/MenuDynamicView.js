@@ -12,48 +12,40 @@ class MenuDynamicView {
     /**
      * Creates a card, starting from a template in the form of a string
      * 
-     * @param {Number} id id of the element in the DB - will be used in the drag-and-drop
-     * @param {String} name name of the beverage
-     * @param {String} category additional info
-     * @param {String} beverageType type of beverage (beer/wine/cocktail/non-alcoholic)
-     * @param {Number} volumeMl size of the serving container available
-     * @param {Number} alcoholStrength percentage of alcohol
-     * @param {Array<String>} allergies array with some properties
-     * @param {Boolean} kosher if it's kosher conformant
-     * @param {String} wineColor color of the wine
-     * @param {Number} priceWithVat price with taxes applied
-     * 
+     * @param {MenuItemClass} m an instance of the MenuItemClass class. I use the getters defined in the class to access all the
+     * attributes I need in this function to build the template for the card
      * @returns {String} a string with the newly populated card
      */
-    createItemCard(id, name, category, beverageType, volumeMl, alcoholStrength, allergies, kosher, wineColor, priceWithVat) {
+    createItemCard(m) {
         let cardTemplate = `
-            <div id="${id}" class="menu-card">
+            <div id="${m._getId()}" class="menu-card">
                 <div class="menu-card-content">
                     <div class="menu-card-title">
-                        <h3 id=card-title>${name}</h3>
+                        <h3 id=card-title>${m._getName()}</h3>
                     </div>
                     <div class="menu-card-category">
-                        <h4 id="card-category">${category}</h4>
+                        <h4 id="card-category">${m._getCategory()}</h4>
                     </div>
-                    <div class="menu-card-strength"><span id="card-strength">${alcoholStrength}%</span></div>
+                    <div class="menu-card-strength"><span id="card-strength">${m._getAlcoholStrength()}%</span></div>
                     <div class="menu-card-allergies">`;
 
         // If the product has specific characteristics, a string with an unordered list + list items will be concatenated to the cardTemplate one
-        if (allergies) {
+        if (m._getSpecialProperties().length > 0) {
+            let allergies = m._getSpecialProperties();
             let allergyString = `<ul class="menu-allergy-list">`
 
             allergies.forEach(a => {
                 switch (a) {
                     case "organic":
-                        allergyString += `<li class="menu-allergy-item"><img src="Images/Organic-512.png" alt="organic"></li>`;
+                        allergyString += `<li class="menu-allergy-item"><img src="/Images/Organic-512.png" alt="organic"></li>`;
                         break;
 
                     case "glutenFree":
-                        allergyString += `<li class="menu-allergy-item"><img src="Images/Gluten_free-512.png" alt="gluten free"></li>`;
+                        allergyString += `<li class="menu-allergy-item"><img src="/Images/Gluten_free-512.png" alt="gluten free"></li>`;
                         break;
 
                     case "lactoseFree":
-                        allergyString += `<li class="menu-allergy-item"><img src="Images/Dairy_free-512.png" alt="lactose free"></li>`;
+                        allergyString += `<li class="menu-allergy-item"><img src="/Images/Dairy_free-512.png" alt="lactose free"></li>`;
                         break;
                 }
             });
@@ -63,9 +55,9 @@ class MenuDynamicView {
         }
 
         cardTemplate += `
-                    <div class="menu-card-volume"><p>${volumeMl}ml</p></div>
-                    <div class="menu-card-price"><p>${priceWithVat}:-</p></div>
-                    <div class="menu-card-type"><p>${beverageType}</p></div>
+                    <div class="menu-card-volume"><p>${m._getVolumeMl()}ml</p></div>
+                    <div class="menu-card-price"><p>${m._getPriceWithVat()}:-</p></div>
+                    <div class="menu-card-type"><p>${m._getBeverageType()}</p></div>
                 </div>
             </div>`
 

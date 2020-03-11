@@ -14,7 +14,7 @@ body {
 }
 
 .menu-card {
-    background-image: url("../Images/Parchment.png");
+    background-image: url("/Images/Parchment.png");
     background-repeat: no-repeat;
     background-size: 90% 100%;
 
