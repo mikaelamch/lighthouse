@@ -19,6 +19,17 @@ else
     ordersMatrix = localStorageGetObj('ordersMatrix'); //get ordersMatrix from local storage if it exists already
 
 //set and get functions from local browser storage
+function saveItems(key, obj) {
+    localStorage.setItem(key, JSON.stringify(obj))
+}
+
+function retrieveItems(key) {
+    return JSON.parse(localStorage.getItem(key))
+}
+
+
+
+//set and get functions from local browser storage
 function localStorageSetObj(key, obj) {
     localStorage.setItem(key, JSON.stringify(obj))
 }
@@ -258,7 +269,19 @@ $(function() { //executes only after the final page with all components are load
             houseStockItemsColumn.insertAdjacentHTML('beforeend', '<div class="flexbox4_items_column1">'+item.name + '</div>');
         });
 
-        // DRAG-AND-DROP (code re-used from menu view controller file)
+        //reload saved on the house items
+        if(localStorage.getItem('onTheHouse')){
+            var items = retrieveItems('onTheHouse');
+            items.forEach(function (name) {
+                var content = '<div>'+ name + '</div>';
+                document.getElementById('on_the_house_items').insertAdjacentHTML('beforeend', content);
+            });
+
+        }
+
+
+
+        /* DRAG-AND-DROP (code re-used from menu view controller file)*/
         $(".flexbox4_items_column1").draggable({
             revert: "invalid",
             helper: "clone",
@@ -270,12 +293,20 @@ $(function() { //executes only after the final page with all components are load
         $("#on_the_house_items").droppable({
             drop: function (event, ui) {
                 let name = ui.draggable.find('.flexbox4_items_column1').prevObject["0"].innerText;
+                //write to local storage the items given away on the house
+                //increase count when item added more than once?
+
+                //
+                var items = retrieveItems('onTheHouse')?retrieveItems('onTheHouse') : [];
+                items.push(name);
+                saveItems('onTheHouse', items);
+
                 $("<div></div>")
                     .html(name)
                     .appendTo($(this));
             }
         });
-        //need to write items given away on the house to local storage
+
     });
 
 
