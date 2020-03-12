@@ -271,8 +271,8 @@ $(function() { //executes only after the final page with all components are load
 
         //reload saved on the house items
         if(localStorage.getItem('onTheHouse')){
-            var items = retrieveItems('onTheHouse');
-            items.forEach(function (name) {
+            var savedItems = retrieveItems('onTheHouse');
+            savedItems.forEach(function (name) {
                 var content = '<div>'+ name + '</div>';
                 document.getElementById('on_the_house_items').insertAdjacentHTML('beforeend', content);
             });

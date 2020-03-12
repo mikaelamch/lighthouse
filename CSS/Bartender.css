@@ -210,7 +210,7 @@ body, html {
 }
 #on_the_house_items{
     border-left: 1px solid white;
-    height:50vh;
+    height:80vh;
     flex:2;
 }
 
@@ -222,7 +222,7 @@ input[type="checkbox"]{
 }
 
 /* Responsive */
-@media screen and (min-height:327px) and (max-width: 1300px) {
+@media screen and (min-height:327px) and (max-width: 1500px) {
     .tables {
         border-radius: 100%;
         height: 200px;
