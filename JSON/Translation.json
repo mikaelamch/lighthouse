@@ -1,3 +1,4 @@
+
 {
   "english": {
     "language_select_txt": "Språk:",
@@ -28,7 +29,16 @@
     "beer_type_text":  "Beer",
     "wine_type_text":  "Wine",
     "cocktail_type_text":  "Cocktail",
-    "nonalch_type_text":  "Non-alcoholic"
+    "nonalch_type_text":  "Non-alcoholic",
+
+    "item_number_txt": "Item Number",
+    "drink_txt": "Drink",
+    "in_stock_txt": "In Stock",
+    "disable_menu_txt": "Disable",
+
+    "house_item_number_txt": "Item Number",
+    "menu_txt": "Menu",
+    "given_txt": "Given on the house today"
 
   },
   "swedish": {
@@ -42,9 +52,9 @@
     "option_1_txt":" Klicka för att beställa.",
     "option_2_txt":" Är du VIP-kund? <br> Klicka för att logga in.",
 
-    "bartender_table_view_txt": "Tabeller",
-    "bartender_stock_view_txt": "Stock",
-    "bartender_house_view_txt": "På huset",
+    "bartender_table_view_txt": "Bord",
+    "bartender_stock_view_txt": "Lager",
+    "bartender_house_view_txt": "Huset bjuder",
     "table1_txt": "BORD 1",
     "table2_txt": "BORD 2",
     "table3_txt": "BORD 3",
@@ -55,6 +65,15 @@
     "bar_language_select_txt": "Language:",
     "bar_english_txt": "English",
     "bar_swedish_txt": "Swedish",
-    "help_txt": "Ring säkerhet"
+    "help_txt": "Ring säkerhetsvakt",
+
+    "item_number_txt": "Artikelnummer",
+    "drink_txt": "Dryck",
+    "in_stock_txt": "I Lager",
+    "disable_menu_txt":  "Inaktivera",
+
+    "house_item_number_txt": "Artikelnummer",
+    "menu_txt": "Meny",
+    "given_txt": "Gratis dryck idag"
   }
 }

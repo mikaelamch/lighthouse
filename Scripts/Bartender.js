@@ -310,4 +310,34 @@ $(function() { //executes only after the final page with all components are load
     });
 
 
+/*
+    //get JSON from the given API address and return return it
+    let beverage;
+    let beverageName;
+    let item;
+    const DB_ADDRESS = "JSON/DB_Beverages.json"
+
+    function getbeverage() {
+        return fetch(DB_ADDRESS)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(response){
+                console.dir(response);
+                return response
+            })
+    }
+
+    getbeverage();
+
+    getbeverage().then(function(response) {
+        var beverage = response;
+        const ITEM = document.getElementById("stock_item");
+        //return beverage;
+        beverageName = beverage['1'].name;
+        console.log(beverageName);
+        //item = document.getElementById("stock item");
+    })
+
+    */
 });
