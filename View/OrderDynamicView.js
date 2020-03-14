@@ -1,3 +1,5 @@
+import MenuItemClass from "/Classes/MenuItemClass.js";
+
 class OrderDynamicView {
     constructor() {
         
@@ -7,14 +9,23 @@ class OrderDynamicView {
         return $('.active').attr('id');
     }
 
+    /**
+     * 
+     * @param {String} view 
+     * @param {Array.<MenuItemClass>} order 
+     */
     _refreshView(view, order) {
-        /** @todo KEEP THE BUTTONS IN THE VIEW */
-        $(view).html('');
+        $(`${view} .listOfOrders`).html('');
         order._getArray().forEach(o => {
-            $("<div></div>")
-                .html(o._getName())
-                .appendTo($(view));
+            $(this._createOrderItemView(o))
+                .appendTo($(`${view} .listOfOrders`));
         });
+    }
+
+    _createOrderItemView(singleOrder) {
+        let singleOrderTemplate = `<div><span class="nameOrderItem">${singleOrder.name}</span><span class="qtyOrderItem">x ${singleOrder.qty}</span><span class="totalPriceOrderItem">${singleOrder.totalPrice}:-</span></div>`
+        
+        return singleOrderTemplate;
     }
 
     /** @todo ADD CREATE ITEMINORDER WITH BASIC INFO - NAME AND PRICE */

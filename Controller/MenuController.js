@@ -53,7 +53,12 @@ $(() => {
     // When dropping the card, the menu item related to the card will be added to the array in 'order'
     $(`#${viewO._getActiveOrderId()}`).droppable({
         drop: function (event, ui) {
-            order._add(new MenuItemClass(db._getSingleProduct(ui.draggable.attr('id'))));
+            let idItem = parseInt(ui.draggable.attr('id'));
+            if (order._find(idItem)) {
+                order._update(idItem);
+            } else {
+                order._add(new MenuItemClass(db._getSingleProduct(idItem)));
+            }
             // Send the instance of the OrderModel to the view (of the Order)
             // In the view THINGS will get appended based on the data that was exchanged
             viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);

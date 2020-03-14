@@ -114,6 +114,22 @@ Style the tab content (and add height:100% for full page content)
   display: none;
 }
 
+.nameOrderItem {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.qtyOrderItem {
+  margin-left: 1.5em;
+  font-size: 1.3em;
+}
+
+.totalPriceOrderItem {
+  margin-left: 1.5em;
+  font-size: 1.3em;
+  font-style: italic;
+}
+
 /* #order:hover #person1 {
   display: block;
 } */
