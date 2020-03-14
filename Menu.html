@@ -1,67 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Lighthouse on the Clifftop</title>
-    <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+  <meta charset="UTF-8">
+  <title>Lighthouse on the Clifftop</title>
+  <link rel="stylesheet" type="text/css" href="CSS/Menu.css">
+  <!-- Stylesheet for the menu item's card -->
+  <link rel="stylesheet" type="text/css" href="CSS/MenuItemCard.css">
 </head>
+
 <body>
-<div>
-<div id="menu">
-<div id="inner-container" class="innerContainer">
-<button class="tablink" onclick="openPage('Beverage_Menu', this, 'red')" id="defaultOpen">Beverage Menu</button>
-<button class="tablink" onclick="openPage('Snack_Menu', this, 'green')">Snack Menu</button>
-<button class="tablink" onclick="openPage('Single_Order', this, 'blue')">Single Order</button>
-<button class="tablink" onclick="openPage('Group_Order', this, 'yellow')">Group Order</button>
+  <div>
+    <div id="menu">
+      <div class='menu-container' id="rootMenu">
+        <!-- The cards with the menu items will get appended in here -->
 
-<div id="Beverage_Menu" class="tabcontent">
-  <h3>Beverage Menu</h3>
-  <p>Drinks</p>
-</div>
+      </div>
+      <!-- <div id="inner-container" class="innerContainer">
+        <button class="tablink" onclick="openPage('Beverage_Menu', this, 'red')" id="defaultOpen">Beverage Menu</button>
+        <button class="tablink" onclick="openPage('Snack_Menu', this, 'green')">Snack Menu</button>
+        <button class="tablink" onclick="openPage('Single_Order', this, 'blue')">Single Order</button>
+        <button class="tablink" onclick="openPage('Group_Order', this, 'yellow')">Group Order</button>
 
-<div id="Snack_Menu" class="tabcontent">
-  <h3>Snack Menu</h3>
-  <p>Food</p>
-</div>
+        <div id="Beverage_Menu" class="tabcontent">
+          <h3>Beverage Menu</h3>
+          <p>Drinks</p>
 
-<div id="Single_Order" class="tabcontent">
-    <div class="order">
-        <p>Order</p>
+          
+        </div>
+
+        <div id="Snack_Menu" class="tabcontent">
+          <h3>Snack Menu</h3>
+          <p>Food</p>
+        </div>
+
+        <div id="Single_Order" class="tabcontent">
+          <div class="order">
+            <p>Order</p>
+          </div>
+        </div>
+
+        <div id="Group_Order" class="tabcontent">
+          <h3>Group Order</h3>
+        </div>
+
+      </div>
+    </div> -->
     </div>
-</div>
-
-<div id="Group_Order" class="tabcontent">
-    <h3>Group Order</h3>
-</div>
-
-</div>
-</div>
-</div>
+    <!-- End #menu -->
 
 
 
-<script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
+    <!-- <script>
+    function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
 
 
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script> -->
 
-<script type="text/javascript" src="jquery-3.3.1.min.js" ></script>
-<script src="Controller/MenuController.js"></script>
+    <div id="dropDiv"></div>
+
+    <div id="innerflexbox3">
+      <div class="bottombar">
+        <div id="server">Mike 1237</div>
+        <!--<div id="time"></div>-->
+        <div id="today"></div>
+        <div id="combination_txt"></div>
+        <div id="bar_language_select">
+          <span id="bar_language_select_txt"></span>
+          <select class="lang">
+            <option value="english" selected="selected" id="bar_english_txt"></option>
+            <option value="swedish" id="bar_swedish_txt"></option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="Scripts/Control.js"></script>
+    <script type="module" src="Controller/MenuController.js"></script>
+    <script type="module" src="View/MenuDynamicView.js"></script>
+
 </body>
-</html> 
+
+</html>

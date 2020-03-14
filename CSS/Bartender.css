@@ -9,12 +9,10 @@ body, html {
     border-radius: 100%;
     height:250px;
     width:250px;
-   // border: 3px solid #604533;
     color:white;
     font-weight: bold;
     display:inline-block;
     margin:50px;
-   // background-color: #604533;
     background-image: url("../Images/Dark-Wood-Table-Texture.jpg");
 }
 .order_1{
@@ -66,7 +64,7 @@ body, html {
 
 /* Style tab links */
 .tablink {
-    //background-color: rgb(79, 152, 174);
+
     background-color: #172946;
     color: white;
     float: left;
@@ -84,25 +82,21 @@ body, html {
 .tabcontent {
     color: white;
     display: none;
-   // padding: 20px;
-    //padding-top: 60px;
     min-height: 100%;
 }
 .innerContainer{
-    //padding:30px 0px 0px 30px;
-   // background-color: #ffffff;
-   // height: auto;
     border-radius: 20px;
-
+ }
+.tablecontainer
+{
+    display: flex;
+    flex-direction: row;
 }
 /* bottom bar */
 .bottombar{
     min-height: 50px;
-    //width: 100vw;
     line-height: 50px;
     vertical-align: middle;
-    //padding:20px;
-    //position: sticky;
     background-color: #172946;
     color: white;
 
@@ -110,20 +104,15 @@ body, html {
 .orders_list{
     height:300px;
     width:300px;
-
-    //border:5px solid saddlebrown;
     background-image: url("../Images/Order Pad.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     border-radius: 20px;
-    display:inline-block;
     float:right;
-    position:absolute;
-    margin-bottom:5vh;
-    margin-top:5%;
-    padding:30px;
+    margin:5vh;
+    padding:35px;
     color:black;
 }
 
@@ -132,6 +121,49 @@ body, html {
 }
 .paid_cb{
     display: inline-block;
+}
+.flexbox4{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:  flex-start;
+}
+.flexbox4_children{
+    margin-top:50px;
+    flex: 1;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:  center;
+    align-content:stretch;
+
+}
+.flexbox4_titles{
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-bottom: 1px solid white;
+    padding-bottom:20px;
+    font-size: x-large;
+
+}
+.flexbox4_items_column1{
+    width: 180px;
+    padding: 10px;
+}
+.flexbox4_items_column2,.flexbox4_sl_no{
+    padding: 10px;
+}
+.flexbox4_items_column3{
+    padding-top: 12px;
+    padding-bottom: 8px;
+
+}
+.disable{
+    color: grey;
+    text-decoration: line-through;
 }
 
 #outerflexbox{
@@ -147,10 +179,7 @@ body, html {
 #innerflexbox2{
     flex:auto;
 }
-#innerflexbox3{
-   // max-height:50px;
-   // flex:0.5;
-}
+
 #Table {
     background-color: #462a17;
 }
@@ -179,16 +208,25 @@ body, html {
     padding-left: 2vw;
 
 }
+#on_the_house_items{
+    border-left: 1px solid white;
+    height:80vh;
+    flex:2;
+}
 
-
+input[type="checkbox"]{
+    padding: 0px !important;
+    margin: 0px !important;
+    height: 14px !important;
+    width: 14px !important;
+}
 
 /* Responsive */
-@media screen and (min-height:327px) and (max-width: 1300px) {
+@media screen and (min-height:327px) and (max-width: 1500px) {
     .tables {
         border-radius: 100%;
         height: 200px;
         width: 200px;
-        border: 3px solid #604533;
         color: white;
         font-weight: bold;
         display: inline-block;
@@ -255,7 +293,6 @@ body, html {
             border-radius: 100%;
             height:200px;
             width:200px;
-            border: 3px solid #604533;
             color:white;
             font-weight: bold;
             display:inline-block;

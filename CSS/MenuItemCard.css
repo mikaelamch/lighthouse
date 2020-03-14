@@ -1,0 +1,104 @@
+/* @author Alessandra */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.menu-container {
+    
+}
+
+.menu-card {
+    background-image: url("/Images/Parchment.png");
+    background-repeat: no-repeat;
+    background-size: 90% 100%;
+
+    height: 300px;
+    max-width: 400px;
+    
+    display: flex;
+
+}
+
+.menu-card-content {
+    width: 70%;
+    margin: auto;
+    
+}
+
+.menu-card-content>div {
+    
+}
+
+.menu-card-title {
+    grid-area: title;
+}
+
+.menu-card-title>h3 {
+    
+}
+
+.menu-card-category {
+    grid-area: category;
+}
+
+.menu-card-category>h4 {
+    
+}
+
+.menu-card-strength {
+    grid-area: strength;
+    
+}
+
+.menu-card-allergies {
+    grid-area: allergy;
+}
+
+.menu-special-list {
+    list-style: none;
+}
+
+.menu-special-item {
+    display: inline;
+}
+
+.menu-card-strength>span {
+    
+}
+
+.menu-special-item>img {
+    width: 60px;
+    height: 60px;
+}
+
+.menu-card-volume {
+    grid-area: volume;
+}
+
+.menu-card-volume>p {
+    
+}
+
+.menu-card-price {
+    grid-area: price;
+    
+}
+
+.menu-card-price>p {
+    font-size: 2em;
+}
+
+.menu-card-type {
+    grid-area: type;
+    
+}
+
+.menu-card-type>p {
+    
+}
