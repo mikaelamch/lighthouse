@@ -1,4 +1,4 @@
-import MenuItemClass from "/Classes/MenuItemClass.js";
+import MenuItemClass from "../Classes/MenuItemClass.js";
 
 class OrderDynamicView {
     constructor() {

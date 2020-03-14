@@ -3,7 +3,7 @@
  * @file DatabaseCRUDClass.js
  * @author Alessandra
  */
-const DATABASE_PATH = "/JSON/DB_Beverages.json";
+const DATABASE_PATH = "JSON/DB_Beverages.json";
 
 class DatabaseCRUDClass {
     constructor() {

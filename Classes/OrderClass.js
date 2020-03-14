@@ -1,7 +1,7 @@
 /**
  * This is the class for the single order (1 person)
  */
-import MenuItemClass from "/Classes/MenuItemClass.js";
+import MenuItemClass from "../Classes/MenuItemClass.js";
 
 class OrderClass {
     constructor() {

@@ -37,15 +37,15 @@ class MenuDynamicView {
             allergies.forEach(a => {
                 switch (a) {
                     case "o":
-                        allergyString += `<li class="menu-special-item"><img src="/Images/Organic-512.png" alt="organic"></li>`;
+                        allergyString += `<li class="menu-special-item"><img src="Images/Organic-512.png" alt="organic"></li>`;
                         break;
 
                     case "g":
-                        allergyString += `<li class="menu-special-item"><img src="/Images/Gluten_free-512.png" alt="gluten free"></li>`;
+                        allergyString += `<li class="menu-special-item"><img src="Images/Gluten_free-512.png" alt="gluten free"></li>`;
                         break;
 
                     case "l":
-                        allergyString += `<li class="menu-special-item"><img src="/Images/Dairy_free-512.png" alt="lactose free"></li>`;
+                        allergyString += `<li class="menu-special-item"><img src="Images/Dairy_free-512.png" alt="lactose free"></li>`;
                         break;
 
                     // case "k":

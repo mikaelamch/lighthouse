@@ -3,13 +3,13 @@
  * @file MenuController.js
  * @author Alessandra
  */
-import DatabaseCRUDClass from '/Classes/DatabaseCRUDClass.js';
-import MenuItemClass from '/Classes/MenuItemClass.js';
-import OrderClass from '/Classes/OrderClass.js';
-import MenuDynamicView from '/View/MenuDynamicView.js';
-import OrderDynamicView from '/View/OrderDynamicView.js';
-import GroupOrderClass from '/Classes/GroupOrderClass.js';
-import UndoRedoManagerClass from '/Classes/UndoRedoManagerClass.js';
+import DatabaseCRUDClass from '../Classes/DatabaseCRUDClass.js';
+import MenuItemClass from '../Classes/MenuItemClass.js';
+import OrderClass from '../Classes/OrderClass.js';
+import MenuDynamicView from '../View/MenuDynamicView.js';
+import OrderDynamicView from '../View/OrderDynamicView.js';
+import GroupOrderClass from '../Classes/GroupOrderClass.js';
+import UndoRedoManagerClass from '../Classes/UndoRedoManagerClass.js';
 
 
 // Array of menu items (instances of MenuItemClass) from the DB
