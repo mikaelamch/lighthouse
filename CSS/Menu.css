@@ -130,6 +130,21 @@ Style the tab content (and add height:100% for full page content)
   font-style: italic;
 }
 
+/* bottom bar style */
+.bottombar{
+  min-height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  background-color: #172946;
+  color: white;
+
+}
+
+#lighthouse, #server, #time, #today, #combination_txt, #security, #bar_language_select{
+  display: inline-block;
+  padding-right: 30px;
+}
+
 /* #order:hover #person1 {
   display: block;
 } */

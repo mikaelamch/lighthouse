@@ -8,7 +8,8 @@ import MenuItemClass from '/Classes/MenuItemClass.js';
 import OrderClass from '/Classes/OrderClass.js';
 import MenuDynamicView from '/View/MenuDynamicView.js';
 import OrderDynamicView from '/View/OrderDynamicView.js';
-import GroupOrderClass from '../Classes/GroupOrderClass.js';
+import GroupOrderClass from '/Classes/GroupOrderClass.js';
+import UndoRedoManagerClass from '/Classes/UndoRedoManagerClass.js';
 
 
 // Array of menu items (instances of MenuItemClass) from the DB
@@ -18,6 +19,7 @@ const db = new DatabaseCRUDClass();
 // Create an instance of the MenuDynamicView class, this view will be what is shown on the screen in the menu page
 const view = new MenuDynamicView();
 const viewO = new OrderDynamicView();
+const undoRedo = new UndoRedoManagerClass();
 
 $(() => {
     // Get the json from the instance of the class that accesses the database
@@ -56,8 +58,13 @@ $(() => {
             let idItem = parseInt(ui.draggable.attr('id'));
             if (order._find(idItem)) {
                 order._update(idItem);
+                // PUT IN THE DONE OPERATIONS
+                // undoRedo._do({type: 'u', obj: item});
             } else {
-                order._add(new MenuItemClass(db._getSingleProduct(idItem)));
+                let item = new MenuItemClass(db._getSingleProduct(idItem));
+                order._add(item);
+                // PUT IN THE DONE OPERATIONS
+                // undoRedo._do({type: 'a', obj: item});
             }
             // Send the instance of the OrderModel to the view (of the Order)
             // In the view THINGS will get appended based on the data that was exchanged
@@ -67,6 +74,12 @@ $(() => {
 
     // PSEUDO CODE: handlers for the three buttons
     // Prev Next and Finish
-    /** @todo ADD HANDLERS, IN THE HANDLER 'ADD PERSON' (OR NEXT) CALL THE VIEW METHOD 'UPDATATEORDERBLOCK', PASS THE CURRENT VIEW */
+    /** @todo ADD HANDLERS, IN THE HANDLER 'ADD PERSON' (OR NEXT) CALL THE VIEW METHOD 'UPDATATEORDERBLOCK', PASS THE CURRENT VIEW!!!!
+     * @todo TEMPORARY UNDO REDO
+    */
+   $('.undo').click(() =>{
+    //    undoRedo._undo();
+    //    console.log(undoRedo.undoneOperations);
+   });
 
 });
