@@ -13,3 +13,4 @@ class MenuModel {
         this.priceWithVat = priceWithVat;
     }
 }
+
