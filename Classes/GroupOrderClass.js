@@ -3,7 +3,7 @@ class GroupOrder {
         this.groupOfOrdersArray = [];
     }
 
-    _add(order) {
+    add(order) {
         this.groupOfOrdersArray.push(order);
     }
 }

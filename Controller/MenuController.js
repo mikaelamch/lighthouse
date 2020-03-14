@@ -56,15 +56,16 @@ $(() => {
     $(`#${viewO._getActiveOrderId()}`).droppable({
         drop: function (event, ui) {
             let idItem = parseInt(ui.draggable.attr('id'));
-            if (order._find(idItem)) {
-                order._update(idItem);
+            if (order.find(idItem)) {
+                order.update(idItem);
                 // PUT IN THE DONE OPERATIONS
-                // undoRedo._do({type: 'u', obj: item});
+                let item = order._getSingleItem(idItem);
+                undoRedo.do({ type: 'u', item: item });
             } else {
-                let item = new MenuItemClass(db._getSingleProduct(idItem));
-                order._add(item);
+                order.add(new MenuItemClass(db._getSingleProduct(idItem)));
                 // PUT IN THE DONE OPERATIONS
-                // undoRedo._do({type: 'a', obj: item});
+                let item = order._getSingleItem(idItem);
+                undoRedo.do({ type: 'a', item: item });
             }
             // Send the instance of the OrderModel to the view (of the Order)
             // In the view THINGS will get appended based on the data that was exchanged
@@ -77,9 +78,20 @@ $(() => {
     /** @todo ADD HANDLERS, IN THE HANDLER 'ADD PERSON' (OR NEXT) CALL THE VIEW METHOD 'UPDATATEORDERBLOCK', PASS THE CURRENT VIEW!!!!
      * @todo TEMPORARY UNDO REDO
     */
-   $('.undo').click(() =>{
-    //    undoRedo._undo();
-    //    console.log(undoRedo.undoneOperations);
-   });
+    $('.undo').click(() => {
+        if (undoRedo._getDoneOpArray().length > 0) {
+            undoRedo.undo();
+            order.updateUndoFromOperation(undoRedo._getLastOpInUndo());
+            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
+        }
+    });
+
+    $('.redo').click(() => {
+        if (undoRedo._getUndoneOpArray().length > 0) {
+            undoRedo.redo();
+            order.updateRedoFromOperation(undoRedo._getLastOpInDone());
+            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
+        }
+    });
 
 });
