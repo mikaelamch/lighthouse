@@ -8,6 +8,7 @@ body, html {
   height: 70vh;
   position: relative;
   background-color: #e0e0e0;
+  z-index: 1;
 }
 
 .menu-container {
@@ -19,7 +20,7 @@ body, html {
   overflow: auto;
 }
 
-/* Style tab links */
+/* Style tab links
 .tablink {
   background-color: #296d98;
   color: white;
@@ -54,7 +55,7 @@ body, html {
 }
 
 
-/* Style the tab content (and add height:100% for full page content) */
+Style the tab content (and add height:100% for full page content)
 .tabcontent {
   color: rgb(4, 4, 21);
   display: none;
@@ -63,17 +64,56 @@ body, html {
   margin-right: 30px;
   min-height: 80vh;
 }
-
-/* #menu {background-color: black} */
+/* 
+/* #menu {background-color: black} 
 #Beverage_Menu {background-color: red;}
 #Snack_Menu {background-color: green;}
 #Single_Order {background-color: blue;}
 #Group_Order {background-color: yellow;}
-#inner-container {background-color: pink;}
+#inner-container {background-color: pink;}*/
 
 
-#dropDiv {
+#order {
   height: 20vh;
   width: 100vw;
-  background-color: rgb(255, 198, 198);
+  margin-top: 2em;
+  overflow:hidden;
+  z-index: -1;
 }
+
+#person0 {
+  width:100vw;
+  height:20vh;
+  right: 0;
+  background-color: rgb(255, 198, 198);
+  position: absolute;
+}
+
+.clusterOfButtons {
+  margin: 1em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.addPerson {
+  position: relative;
+  margin: 1em;
+}
+
+.finish {
+  position: relative;
+}
+
+#person1 {
+  width:100vw;
+  height:20vh;
+  right: 0;
+  background-color: rgb(54, 45, 45);
+  position: absolute;
+  display: none;
+}
+
+/* #order:hover #person1 {
+  display: block;
+} */

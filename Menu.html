@@ -72,7 +72,17 @@
     document.getElementById("defaultOpen").click();
   </script> -->
 
-    <div id="dropDiv"></div>
+    <div id="order">
+      <div id="person0" class="active">
+        <!-- Some content here -->
+        <div class="clusterOfButtons">
+          <button class="prevPerson">Delete person</button>
+          <button type="button" class="addPerson">Add person +</button>
+          <button type="button" class="finish">Finish</button>
+        </div>
+      </div>
+      <div id="person1" class="unactive"></div>
+    </div>
 
     <div id="innerflexbox3">
       <div class="bottombar">
@@ -95,6 +105,7 @@
     <script type="text/javascript" src="Scripts/Control.js"></script>
     <script type="module" src="Controller/MenuController.js"></script>
     <script type="module" src="View/MenuDynamicView.js"></script>
+    <script type="module" src="View/OrderDynamicView.js"></script>
 
 </body>
 

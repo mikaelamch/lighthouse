@@ -5,7 +5,11 @@
  */
 import DatabaseCRUDClass from '/Classes/DatabaseCRUDClass.js';
 import MenuItemClass from '/Classes/MenuItemClass.js';
+import OrderClass from '/Classes/OrderClass.js';
 import MenuDynamicView from '/View/MenuDynamicView.js';
+import OrderDynamicView from '/View/OrderDynamicView.js';
+import GroupOrderClass from '../Classes/GroupOrderClass.js';
+
 
 // Array of menu items (instances of MenuItemClass) from the DB
 const arrMenuItems = [];
@@ -13,6 +17,7 @@ const arrMenuItems = [];
 const db = new DatabaseCRUDClass();
 // Create an instance of the MenuDynamicView class, this view will be what is shown on the screen in the menu page
 const view = new MenuDynamicView();
+const viewO = new OrderDynamicView();
 
 $(() => {
     // Get the json from the instance of the class that accesses the database
@@ -33,6 +38,8 @@ $(() => {
         view.append(c);
     });
 
+    let groupOrder = new GroupOrderClass();
+    let order = new OrderClass();
 
     // DRAG-AND-DROP
     $(".menu-card").draggable({
@@ -43,20 +50,18 @@ $(() => {
             $(ui.helper).css('width', "100%");
         }
     });
-    // When dropping the card, a new div 
-    $("#dropDiv").droppable({
+    // When dropping the card, the menu item related to the card will be added to the array in 'order'
+    $(`#${viewO._getActiveOrderId()}`).droppable({
         drop: function (event, ui) {
-            // PSEUDO CODE: create an instance of the OrderModel
-            // Add to the instance the menu item
+            order._add(new MenuItemClass(db._getSingleProduct(ui.draggable.attr('id'))));
             // Send the instance of the OrderModel to the view (of the Order)
             // In the view THINGS will get appended based on the data that was exchanged
-            let name = ui.draggable.find('.menu-card-title').text();
-            $("<div></div>") /** @todo order view */
-                .html(name)
-                .appendTo($(this));
+            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
         }
     });
 
     // PSEUDO CODE: handlers for the three buttons
-        // Prev Next and Finish
+    // Prev Next and Finish
+    /** @todo ADD HANDLERS, IN THE HANDLER 'ADD PERSON' (OR NEXT) CALL THE VIEW METHOD 'UPDATATEORDERBLOCK', PASS THE CURRENT VIEW */
+
 });
