@@ -1,4 +1,9 @@
-class GroupOrder {
+/**
+ * This is the class for the group order (more than 1 person)
+ * @file GroupOrder.js
+ * @author Alessandra
+ */
+class GroupOrderClass {
     constructor() {
         this.groupOfOrdersArray = [];
     }
@@ -8,4 +13,4 @@ class GroupOrder {
     }
 }
 
-export default GroupOrder;
+export default GroupOrderClass;

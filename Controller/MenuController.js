@@ -76,7 +76,7 @@ $(() => {
     // PSEUDO CODE: handlers for the three buttons
     // Prev Next and Finish
     /** @todo ADD HANDLERS, IN THE HANDLER 'ADD PERSON' (OR NEXT) CALL THE VIEW METHOD 'UPDATATEORDERBLOCK', PASS THE CURRENT VIEW!!!!
-     * @todo TEMPORARY UNDO REDO
+     * TEMPORARY UNDO REDO
     */
     $('.undo').click(() => {
         if (undoRedo._getDoneOpArray().length > 0) {
@@ -92,6 +92,10 @@ $(() => {
             order.updateRedoFromOperation(undoRedo._getLastOpInDone());
             viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
         }
+    });
+
+    $('.add-person').click(() => {
+        
     });
 
 });

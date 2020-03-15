@@ -1,5 +1,7 @@
 /**
  * This is the class for the single order (1 person)
+ * @file OrderClass.js
+ * @author Alessandra
  */
 import MenuItemClass from "../Classes/MenuItemClass.js";
 

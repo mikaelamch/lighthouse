@@ -1,3 +1,8 @@
+/**
+ * This is a general class that manages undo and redo of operations
+ * @file UndoRedoManagerClass.js
+ * @author Alessandra
+ */
 class UndoRedoManagerClass {
     constructor() {
         this.doneOperations = [];
@@ -9,7 +14,15 @@ class UndoRedoManagerClass {
      * @param {Object} operation the operation done
      */
     do(operation) {
-        this.doneOperations.push(operation);
+        if(this.doneOperations.length > 0) {
+            this.doneOperations.push(operation);
+        }     
+        else {
+            this.doneOperations = [];
+            this.undoneOperations = [];
+            this.doneOperations.push(operation);
+        }
+            
     }
 
     /**
