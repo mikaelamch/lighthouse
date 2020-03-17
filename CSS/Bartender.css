@@ -148,6 +148,7 @@ body, html {
     padding-bottom:20px;
     font-size: x-large;
 
+
 }
 .flexbox4_items_column1{
     width: 180px;
@@ -164,6 +165,14 @@ body, html {
 .disable{
     color: grey;
     text-decoration: line-through;
+}
+.saved_items_cls{
+    padding:10px;
+    width:200px;
+}
+.saved_qty_cls{
+    float:right;
+    font-weight: bold;
 }
 
 #outerflexbox{
@@ -212,6 +221,31 @@ body, html {
     border-left: 1px solid white;
     height:80vh;
     flex:2;
+}
+#saved_item_names{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:  start;
+    align-content:stretch;
+}
+#oth_undo,#oth_redo{
+    background-image: url("../Images/undo.png");
+    height:30px;
+    width:30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    margin-left: 30px;
+    padding: 2px;
+}
+#oth_redo{
+    background-image: url("../Images/redo.png");
+    margin-left: 70px;
+}
+#given_txt{
+    display: inline-block;
 }
 
 input[type="checkbox"]{
