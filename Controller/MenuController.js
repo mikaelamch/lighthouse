@@ -10,6 +10,7 @@ import MenuDynamicView from '../View/MenuDynamicView.js';
 import OrderDynamicView from '../View/OrderDynamicView.js';
 import GroupOrderClass from '../Classes/GroupOrderClass.js';
 import UndoRedoManagerClass from '../Classes/UndoRedoManagerClass.js';
+import LocalStorageManagerClass from '../Classes/LocalStorageManagerClass.js';
 
 
 // Array of menu items (instances of MenuItemClass) from the DB
@@ -91,11 +92,18 @@ $(() => {
             undoRedo.redo();
             order.updateRedoFromOperation(undoRedo._getLastOpInDone());
             viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
+            console.log(LSM.retrieveFromLocal(LSM.savedOrders));
         }
     });
 
     $('.add-person').click(() => {
-        
+        // PSEUDOCODE: When adding a new person -> The current orther gets hidden (VIEW) -> The new one gets shown (VIEW)-> A new instance of the order gets created -> the previous instance gets added to the group order
+
+        // TEMPORARY - fake
+        /**@todo change where this methods are called - for         */
+        let LSM = new LocalStorageManagerClass();
+        LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
+        console.log(LSM.retrieveFromLocal(LSM.savedOrders));
     });
 
 });

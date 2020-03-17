@@ -66,12 +66,20 @@ class OrderClass {
     find(id) {
         return this.orderArray.find(x => x.id === id) ? true : false;
     }
-
+    
+    /**
+     * Updates the array of orders by 'deleting' - see method deleteSingleItem - (that's what undo means in this situation) the menu items when the undo operation is performed
+     * @param {Object} operation undone operation
+     */
     updateUndoFromOperation(operation) {
         this.deleteSingleItem(operation.item.id);
 
     }
     
+    /**
+     * Updates the array of orders by 'adding' (if the undo has deleted the object from the orders array) or 'updating the quantity' of the menu items when the redo operation is performed
+     * @param {Object} operation redone operation
+     */
     updateRedoFromOperation(operation) {
         console.log(operation);
         if(this.orderArray.find(x => x.id == operation.item.id)) {
@@ -81,6 +89,18 @@ class OrderClass {
             // Add the item
             this.orderArray.push(operation.item);
         }
+    }
+
+    parseOrderToJSON() {
+        let JSON = {
+            table: 2,
+            orders : []
+        };
+
+        // Each order will be associated to a person (represented by a numerical index in the array of orders (from 0 to n))
+        JSON.orders.push(this.orderArray);
+
+        return JSON;
     }
 
     _getSingleItem(id) {
