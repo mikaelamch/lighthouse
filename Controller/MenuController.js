@@ -104,6 +104,7 @@ $(() => {
         let LSM = new LocalStorageManagerClass();
         LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
         console.log(LSM.retrieveFromLocal(LSM.savedOrders));
+        writeToOrdersMatrix(LSM.retrieveFromLocal(LSM.savedOrders)); //change ordersMatrix in local storage based on order
     });
 
 });
