@@ -91,6 +91,7 @@ body, html {
 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 /* bottom bar */
 .bottombar{
@@ -102,8 +103,9 @@ body, html {
 
 }
 .orders_list{
-    height:300px;
-    width:300px;
+    color: #261746;
+    height: 380px;
+    width: 370px;
     background-image: url("../Images/Order Pad.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -113,7 +115,39 @@ body, html {
     float:right;
     margin:5vh;
     padding:35px;
-    color:black;
+    position: relative;
+
+}
+.order_book_titles{
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px 0px 20px 0px;
+    color:saddlebrown;
+}
+.order_book_ordernum{
+    width:70%;
+    text-align: right;
+
+}
+.order_book_items{
+    padding: 3px 50px 3px 10px;
+}
+.order_book_cboxes{
+    margin-top:10px;
+    margin-bottom: 10px;
+    color:saddlebrown;
+    position: absolute;
+    bottom: 20px;
+}
+.order_book_total_price{
+    font-weight: bold;
+    margin-top: 20px;
+    color:saddlebrown;
+    position: absolute;
+    bottom: 80px;
+}
+.item_qty{
+    float:right;
 }
 
 .delivered_cb{

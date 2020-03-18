@@ -1,7 +1,7 @@
 var dataViewModels = {};
 
 
-/*Data Models used in Bartender.js file*/
+/*Data Models used in BartenderTables.js file*/
 dataViewModels.ordersArray_1 = '<div class="table_orders order_1" onClick="viewOrderItems(this, 1)">1</div>';
 dataViewModels.ordersArray_2 = '<div class="table_orders order_2" onClick="viewOrderItems(this, 2)">2</div>';
 dataViewModels.ordersArray_3 = '<div class="table_orders order_3" onClick="viewOrderItems(this, 3)">3</div>';
@@ -9,9 +9,26 @@ dataViewModels.ordersArray_4 = '<div class="table_orders order_4" onClick="viewO
 dataViewModels.ordersArray_5 = '<div class="table_orders order_5" onClick="viewOrderItems(this, 5)">5</div>';
 dataViewModels.ordersArray_6 = '<div class="table_orders order_6" onClick="viewOrderItems(this, 6)">6</div>';
 
+dataViewModels.ordersListMenuItems_1a = '<div class="order_book_items">';
+dataViewModels.ordersListMenuItems_1b = '<div class="item_qty">[';
+dataViewModels.ordersListMenuItems_1c = ']</div></div>';
+
+dataViewModels.ordersList_1 = '<div class="orders_list">';
+dataViewModels.ordersList_2 = '<div class="order_book_titles">TABLE ';
+dataViewModels.ordersList_3 = '<div class="order_book_titles order_book_ordernum"> Order Number : ';
+dataViewModels.ordersList_4a = '<div class="order_book_total_price">Total Price : ';
+dataViewModels.ordersList_4b = ' kr</div>';
+dataViewModels.ordersList_5a = '<div class="order_book_cboxes"><input type="checkbox" id=';
+dataViewModels.ordersList_5b = ' class="delivered_cb" name="delivered" value="delivered" onclick=\'handleDeliveredClick(this)\' ';
+dataViewModels.ordersList_5c = '>: Delivered<br>';
+dataViewModels.ordersList_6a = '<input type="checkbox" id=';
+dataViewModels.ordersList_6b = ' class="paid_cb" name="paid" value="paid" onclick=\'handlePaidClick(this)\' ';
+dataViewModels.ordersList_6c = '>: Paid </div></div>';
+dataViewModels.divend = '</div>';
 
 
-/*Data Models used in Bartender2.js file*/
+
+/*Data Models used in BartenderStockAndHouse.js file*/
 dataViewModels.refreshHtml_1 = '<div class=\"saved_items_cls\"></div>';
 dataViewModels.refreshHtml_2a = '<div class=\"saved_qty_cls\"> (';
 dataViewModels.refreshHtml_2b = ')</div>';
