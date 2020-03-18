@@ -21,6 +21,7 @@ const db = new DatabaseCRUDClass();
 const view = new MenuDynamicView();
 const viewO = new OrderDynamicView();
 const undoRedo = new UndoRedoManagerClass();
+const LSM = new LocalStorageManagerClass();
 
 $(() => {
     // Get the json from the instance of the class that accesses the database
@@ -33,12 +34,16 @@ $(() => {
         arrMenuItems.push(m);
     }
 
-    // PSEUDO CODE: for each element in the DB (now in the arrMenuItems)
+    // PSEUDO CODE: for each element in the DB, if not desabled (now in the arrMenuItems)
     // Create a card in the html (all the informations will be displayed or used as "id" in the tags)
     // The mechanics of this are not important here, it's the View's job - The controller just passes the data to show
+    // Get the array with the disabled items' ids
+    let disabledItems = LSM.retrieveFromLocal(LSM.disabledItems);
     arrMenuItems.forEach(m => {
-        let c = view.createItemCard(m);
-        view.append(c);
+        if(!disabledItems.includes(m._getId())) {
+            let c = view.createItemCard(m);
+            view.append(c);
+        } 
     });
 
     let groupOrder = new GroupOrderClass();
@@ -92,7 +97,6 @@ $(() => {
             undoRedo.redo();
             order.updateRedoFromOperation(undoRedo._getLastOpInDone());
             viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
-            console.log(LSM.retrieveFromLocal(LSM.savedOrders));
         }
     });
 
@@ -101,7 +105,7 @@ $(() => {
 
         // TEMPORARY - fake
         /**@todo change where this methods are called - for         */
-        let LSM = new LocalStorageManagerClass();
+        
         LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
         console.log(LSM.retrieveFromLocal(LSM.savedOrders));
     });
