@@ -118,6 +118,15 @@ body, html {
     position: relative;
 
 }
+.deliver_cb, #delivered_txt{
+    display: inline-block;
+}
+
+
+.paid_cb, #paid_txt{
+    display: inline-block;
+}
+
 .order_book_titles{
     font-weight: bold;
     display: inline-block;
@@ -145,6 +154,7 @@ body, html {
     color:saddlebrown;
     position: absolute;
     bottom: 80px;
+
 }
 .item_qty{
     float:right;
@@ -237,6 +247,7 @@ body, html {
     display: inline-block;
     padding-right: 30px;
 }
+
 #security{
     float: right;
 }
