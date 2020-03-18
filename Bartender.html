@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="CSS/Bartender.css">
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="Scripts/Bartender.js"></script>
-    <script type="text/javascript" src="Scripts/Control.js" ></script>
-
+    <script type="text/javascript" src="Scripts/TranslationControl.js" ></script>
+    <script type="text/javascript" src="Scripts/UtilityFunctions.js"></script>
+    <script type="text/javascript" src="Scripts/BartenderViewModel.js"></script>
+    <script type="text/javascript" src="Scripts/BartenderTables.js"></script>
+    <script type="module" src="Scripts/BartenderStockAndHouse.js"></script>
 </head>
 
 <body>
@@ -46,13 +48,6 @@
                     </div>
                 </div>
             </div>
-           <!-- Dummy place order buttons:
-            <button class="place_order_btn">Table_1</button>
-            <button class="place_order_btn">Table_2</button>
-            <button class="place_order_btn">Table_3</button>
-            <button class="place_order_btn">Table_4</button>
-            <button class="place_order_btn">Table_5</button>
-            <button class="place_order_btn">Table_6</button>-->
         </div>
 
         <div id="Stock" class="tabcontent">
@@ -67,12 +62,6 @@
                     <div id="stock_number" class="flexbox4_children">
                         <div class="flexbox4_titles" id="in_stock_txt"></div>
                     </div>
-                    <!--<div id="stock_requirement" class="flexbox4_children">
-                        <div class="flexbox4_titles">Requirement</div>
-                    </div>
-                    <div id="stock_place_order" class="flexbox4_children">
-                        <div class="flexbox4_titles">Place Order</div>
-                    </div>-->
                     <div id="stock_disable" class="flexbox4_children">
                         <div class="flexbox4_titles" id="disable_menu_txt"></div>
                     </div>
@@ -92,7 +81,10 @@
                             <div class="flexbox4_titles" id="menu_txt"></div>
                         </div>
                         <div id="on_the_house_items" class="flexbox4_children">
-                            <div class="flexbox4_titles" id="given_txt"></div>
+                            <div class="flexbox4_titles" >
+                                <div id="given_txt"></div><div id="oth_undo"></div><div id="oth_redo"></div>
+                                </div>
+                            <div id="saved_item_names"></div>
                         </div>
 
                     </div>
@@ -106,7 +98,6 @@
     <div id="innerflexbox3">
         <div class="bottombar">
             <div id="server">Mike 1237</div>
-            <!--<div id="time"></div>-->
             <div id="today"></div>
             <div id="combination_txt"></div>
             <div id="bar_language_select">
@@ -119,12 +110,11 @@
             <div id="security">
                 <button id="help_txt" ></button>
             </div>
-
-
         </div>
     </div>
  
 </div>
+
 </body>
 
 </html>

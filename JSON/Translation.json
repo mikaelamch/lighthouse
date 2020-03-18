@@ -11,6 +11,12 @@
     "option_1_txt":" Click to order.",
     "option_2_txt":" Are you a VIP customer? <br> Click to login.",
 
+    "table_txt": "Table :",
+    "order_number_txt": "Order Number:",
+    "total_price_txt": "Total Price: ",
+    "delivered_txt" : ": Delivered",
+    "paid_txt": ": Paid",
+
     "bartender_table_view_txt": "Tables",
     "bartender_stock_view_txt": "Stock",
     "bartender_house_view_txt": "On the House",
@@ -51,6 +57,12 @@
     "welcome-message_cont_txt":"(En franchise av The Flying Dutchman)",
     "option_1_txt":" Klicka för att beställa.",
     "option_2_txt":" Är du VIP-kund? <br> Klicka för att logga in.",
+
+    "table_txt": "Bord: ",
+    "order_number_txt": "Beställningsnummer: ",
+    "total_price_txt": "Totalt Belopp: ",
+    "delivered_txt" : ": Levererat",
+    "paid_txt": ": Betalat",
 
     "bartender_table_view_txt": "Bord",
     "bartender_stock_view_txt": "Lager",
