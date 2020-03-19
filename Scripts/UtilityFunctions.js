@@ -45,6 +45,34 @@ function isEqual(array1,array2)
     }
     return true;
 }
+function handleDisableClick(cb){ //adds disabled css effects to items
+    let itemId = Number(cb.id.split('_')[0]);
+    let slNoField =  document.getElementById(itemId + '_item_sl');
+    let itemName = document.getElementById(itemId + '_item_name');
+    let stockQty = document.getElementById(itemId + '_sqty');
+    let disabledItemsIdArray = localStorageGetObj('disabledItems') ? localStorageGetObj('disabledItems') : [];
+
+    if(cb.checked){
+        /*add disable class to stock view columns*/
+        slNoField.classList.add("disable");
+        itemName.classList.add("disable");
+        stockQty.classList.add("disable");
+        /*add id to disabledItems in localStorage*/
+        if(!disabledItemsIdArray.includes(itemId)) {
+            disabledItemsIdArray.push(itemId);
+        }
+    } else{
+        /*remove disable class from stock view columns*/
+        slNoField.classList.remove("disable");
+        itemName.classList.remove("disable");
+        stockQty.classList.remove("disable");
+        /*remove id from disabledItems in localStorage*/
+        disabledItemsIdArray = disabledItemsIdArray.filter(function removeElement(id) {
+            return id !== itemId;
+        });
+    }
+    localStorageSetObj('disabledItems', disabledItemsIdArray);
+}
 
 (function initializeOrdersMatrix() {
     if(!localStorage.getItem('ordersMatrix')) {//app being launched for the first time
@@ -58,6 +86,12 @@ function isEqual(array1,array2)
             }
         }
         localStorageSetObj('ordersMatrix', ordersMatrix);
+    }
+}());
+
+(function initializeDisabledItems() {
+    if(!localStorage.getItem('disabledItems')) {//app being launched for the first time
+        localStorageSetObj('disabledItems', []);
     }
 }());
 

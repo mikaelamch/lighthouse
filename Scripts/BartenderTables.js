@@ -106,24 +106,7 @@ function handleDeliveredClick(cb) { //called when delivered checkbox is clicked
     document.getElementById(paidCBId).disabled = false;
 }
 
-function handleDisableClick(cb){ //adds disabled css effects to items
-    let itemId = cb.id.split('_')[0];
-    let slNoField =  document.getElementById(itemId + '_item_sl');
-    let itemName = document.getElementById(itemId + '_item_name');
-    let stockQty = document.getElementById(itemId + '_sqty');
 
-    if(cb.checked){
-        /*add disable class to stock view columns*/
-        slNoField.classList.add("disable");
-        itemName.classList.add("disable");
-        stockQty.classList.add("disable");
-    } else{
-        /*remove disable class from stock view columns*/
-        slNoField.classList.remove("disable");
-        itemName.classList.remove("disable");
-        stockQty.classList.remove("disable");
-    }
-}
 
 $(function() { //executes only after the final page with all components are loaded
 
