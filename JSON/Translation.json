@@ -44,7 +44,10 @@
 
     "house_item_number_txt": "Item Number",
     "menu_txt": "Menu",
-    "given_txt": "Given on the house today"
+    "given_txt": "Given on the house today",
+
+
+    "person_txt": "Person"
 
   },
   "swedish": {
@@ -86,6 +89,8 @@
 
     "house_item_number_txt": "Artikelnummer",
     "menu_txt": "Meny",
-    "given_txt": "Gratis dryck idag"
+    "given_txt": "Gratis dryck idag",
+
+    "person_txt": "Person"
   }
 }

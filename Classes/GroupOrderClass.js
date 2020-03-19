@@ -11,6 +11,10 @@ class GroupOrderClass {
     add(order) {
         this.groupOfOrdersArray.push(order);
     }
+
+    _getNumberOfOrders() {
+        return this.groupOfOrdersArray.length;
+    }
 }
 
 export default GroupOrderClass;

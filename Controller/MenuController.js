@@ -22,6 +22,8 @@ const view = new MenuDynamicView();
 const viewO = new OrderDynamicView();
 const undoRedo = new UndoRedoManagerClass();
 const LSM = new LocalStorageManagerClass();
+let groupOrder = new GroupOrderClass();
+let order = new OrderClass();
 
 $(() => {
     // Get the json from the instance of the class that accesses the database
@@ -40,14 +42,14 @@ $(() => {
     // Get the array with the disabled items' ids
     let disabledItems = LSM.retrieveFromLocal(LSM.disabledItems);
     arrMenuItems.forEach(m => {
-        if(!disabledItems.includes(m._getId())) {
+        if(disabledItems != null && !disabledItems.includes(m._getId())) {
             let c = view.createItemCard(m);
             view.append(c);
-        } 
+        } else if (disabledItems == null) {
+            let c = view.createItemCard(m);
+            view.append(c);
+        }
     });
-
-    let groupOrder = new GroupOrderClass();
-    let order = new OrderClass();
 
     // DRAG-AND-DROP
     $(".menu-card").draggable({
@@ -58,8 +60,50 @@ $(() => {
             $(ui.helper).css('width', "100%");
         }
     });
-    // When dropping the card, the menu item related to the card will be added to the array in 'order'
-    $(`#${viewO._getActiveOrderId()}`).droppable({
+    makeViewDroppable();
+
+    // PSEUDO CODE: handlers for the buttons
+    $('.undo').click(() => {
+        if (undoRedo._getDoneOpArray().length > 0) {
+            undoRedo.undo();
+            order.updateUndoFromOperation(undoRedo._getLastOpInUndo());
+            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
+        }
+    });
+
+    $('.redo').click(() => {
+        if (undoRedo._getUndoneOpArray().length > 0) {
+            undoRedo.redo();
+            order.updateRedoFromOperation(undoRedo._getLastOpInDone());
+            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
+        }
+    });
+
+    $('.add-person').click(() => {
+        // PSEUDOCODE: When adding a new person 
+        // -> The previous instance gets added to the group order
+        groupOrder.add(order);
+        // -> A new instance of the order gets created
+        order = new OrderClass();
+        //-> The current orther gets hidden (VIEW) 
+        let activeView = viewO._getActiveOrderId();
+        viewO._setViewToUnactive(activeView);
+        
+        //-> The new one gets created and shown (VIEW)
+        viewO._createNewOrderSection(groupOrder._getNumberOfOrders());
+        makeViewDroppable(order);
+    });
+
+    $('.finish').click(() => {
+        LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
+        console.log(LSM.retrieveFromLocal(LSM.savedOrders));
+        writeToOrdersMatrix(LSM.retrieveFromLocal(LSM.savedOrders)); //change ordersMatrix in local storage based on order
+    });
+});
+
+function makeViewDroppable() {
+     // When dropping the card, the menu item related to the card will be added to the array in 'order'
+     $(`#${viewO._getActiveOrderId()}`).droppable({
         drop: function (event, ui) {
             let idItem = parseInt(ui.draggable.attr('id'));
             if (order.find(idItem)) {
@@ -78,37 +122,4 @@ $(() => {
             viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
         }
     });
-
-    // PSEUDO CODE: handlers for the three buttons
-    // Prev Next and Finish
-    /** @todo ADD HANDLERS, IN THE HANDLER 'ADD PERSON' (OR NEXT) CALL THE VIEW METHOD 'UPDATATEORDERBLOCK', PASS THE CURRENT VIEW!!!!
-     * TEMPORARY UNDO REDO
-    */
-    $('.undo').click(() => {
-        if (undoRedo._getDoneOpArray().length > 0) {
-            undoRedo.undo();
-            order.updateUndoFromOperation(undoRedo._getLastOpInUndo());
-            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
-        }
-    });
-
-    $('.redo').click(() => {
-        if (undoRedo._getUndoneOpArray().length > 0) {
-            undoRedo.redo();
-            order.updateRedoFromOperation(undoRedo._getLastOpInDone());
-            viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
-        }
-    });
-
-    $('.add-person').click(() => {
-        // PSEUDOCODE: When adding a new person -> The current orther gets hidden (VIEW) -> The new one gets shown (VIEW)-> A new instance of the order gets created -> the previous instance gets added to the group order
-
-        // TEMPORARY - fake
-        /**@todo change where this methods are called - for         */
-        
-        LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
-        console.log(LSM.retrieveFromLocal(LSM.savedOrders));
-        writeToOrdersMatrix(LSM.retrieveFromLocal(LSM.savedOrders)); //change ordersMatrix in local storage based on order
-    });
-
-});
+}

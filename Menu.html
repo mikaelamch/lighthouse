@@ -71,29 +71,35 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
   </script> -->
-
-    <div id="order">
-      <div id="person1" class="active">
-        <div class="listOfOrders">
+    <div class="order-buttons-container">
+      
+      <div id="order">
+        
+        <div id="person1" class="single-order active">
+          <div class="order-title">Person 1</div>
+          <div class="listOfOrders">
+            
+          </div>
           
         </div>
+        <!-- Temporary second person for the group order -->
+        <!-- <div id="person2" class="unactive">
+          <div class="listOfOrders">
+            
+          </div>
+          <div class="clusterOfButtons">
+            <button type="button" class="undo">Undo</button>
+            <button type="button" class="redo">Redo</button>
+            <button type="button" class="add-person">Add Person</button>
+          </div>
+        </div> -->
+        </div>
         <div class="clusterOfButtons">
-          <button type="button" class="undo">Undo</button>
-          <button type="button" class="redo">Redo</button>
-          <button type="button" class="add-person">Add Person</button>
+          <button type="button" class="button undo">Undo</button>
+          <button type="button" class="button redo">Redo</button>
+          <button type="button" class=" button add-person">Add Person</button>
+          <button type="button" class="button finish">Finish</button>
         </div>
-      </div>
-      <!-- Temporary second person for the group order -->
-      <div id="person2" class="unactive">
-        <div class="listOfOrders">
-          
-        </div>
-        <div class="clusterOfButtons">
-          <button type="button" class="undo">Undo</button>
-          <button type="button" class="redo">Redo</button>
-          <button type="button" class="add-person">Add Person</button>
-        </div>
-      </div>
       </div>
     </div>
 
