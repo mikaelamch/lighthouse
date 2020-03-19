@@ -1,6 +1,7 @@
 class LocalStorageManagerClass {
     constructor() {
         this.savedOrders = 'savedOrders';
+        this.disabledItems = 'disabledItems';
     }
     
     /**

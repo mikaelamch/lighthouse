@@ -18,6 +18,7 @@ if(localStorage.getItem('savedOrders')){
 }
 
 function viewOrderItems(element, orderNumber){
+
     /*remove previous list added*/
     let tabContents = document.getElementById("Table_Inner_Container");
     if(tabContents.lastChild.id !== 'Tables_container_top')
@@ -62,13 +63,14 @@ function viewOrderItems(element, orderNumber){
 
     /*Add a list with order items on screen*/
     let ordersList = dataViewModels.ordersList_1+
-        dataViewModels.ordersList_2 + tableNum + dataViewModels.divend +
-        dataViewModels.ordersList_3 + orderNumber+ dataViewModels.divend +
+        dataViewModels.ordersList_2 + tableNum + dataViewModels.doubledivend +
+        dataViewModels.ordersList_3 + orderNumber+ dataViewModels.doubledivend +
          ordersListMenuItems +
         dataViewModels.ordersList_4a + totalPrice.toFixed(2) + dataViewModels.ordersList_4b +
         dataViewModels.ordersList_5a + deliveredCBId + dataViewModels.ordersList_5b + deliveredStatus + dataViewModels.ordersList_5c +
         dataViewModels.ordersList_6a + paidCBId + dataViewModels.ordersList_6b + disablepaidBox + dataViewModels.ordersList_6c;
     tabContents.insertAdjacentHTML('beforeend', ordersList);
+    populateText('.orders_list'); //call translation function for elements newly added to the view
 }
 
 function handlePaidClick(cb) {
@@ -104,24 +106,7 @@ function handleDeliveredClick(cb) { //called when delivered checkbox is clicked
     document.getElementById(paidCBId).disabled = false;
 }
 
-function handleDisableClick(cb){ //adds disabled css effects to items
-    let itemId = cb.id.split('_')[0];
-    let slNoField =  document.getElementById(itemId + '_item_sl');
-    let itemName = document.getElementById(itemId + '_item_name');
-    let stockQty = document.getElementById(itemId + '_sqty');
 
-    if(cb.checked){
-        /*add disable class to stock view columns*/
-        slNoField.classList.add("disable");
-        itemName.classList.add("disable");
-        stockQty.classList.add("disable");
-    } else{
-        /*remove disable class from stock view columns*/
-        slNoField.classList.remove("disable");
-        itemName.classList.remove("disable");
-        stockQty.classList.remove("disable");
-    }
-}
 
 $(function() { //executes only after the final page with all components are loaded
 

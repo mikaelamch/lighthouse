@@ -26,6 +26,7 @@ $(document).ready(function() {
         let stockDisableColumn = document.getElementById('stock_disable'); //column for item disable checkboxes
         let houseStockSlNo = document.getElementById('house_stock_sl_no'); //Column for Stock item serial num in the 'On the House' tab
         let houseStockItemsColumn = document.getElementById('house_stock_item');//Column for Stock item name in the 'On the House' tab
+        let disabledItems = localStorageGetObj('disabledItems');
 
         Object.values(items).forEach(function (item) {
             /*Insert items read from json file into Stock tab view.*/
@@ -36,6 +37,14 @@ $(document).ready(function() {
             /*Insert items read from json file into 'On the house' tab view */
             houseStockSlNo.insertAdjacentHTML('beforeend', dataViewModels.houseStockSlNo + item.id + dataViewModels.stockSlNo_1c);
             houseStockItemsColumn.insertAdjacentHTML('beforeend', dataViewModels.houseStockItemsColumn + item.name + dataViewModels.stock_1c);
+            if(disabledItems && disabledItems.length > 0) {
+                disabledItems.forEach(function (id) {
+                    if (id === item.id) {
+                        let itemId = '#' + id + '_item_cb';
+                        $(itemId).trigger('click');
+                    }
+                });
+            }
         });
 
         //reload on the house items that have been saved

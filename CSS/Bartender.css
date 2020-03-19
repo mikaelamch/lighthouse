@@ -118,6 +118,15 @@ body, html {
     position: relative;
 
 }
+.deliver_cb, #delivered_txt{
+    display: inline-block;
+}
+
+
+.paid_cb, #paid_txt{
+    display: inline-block;
+}
+
 .order_book_titles{
     font-weight: bold;
     display: inline-block;
@@ -125,7 +134,7 @@ body, html {
     color:saddlebrown;
 }
 .order_book_ordernum{
-    width:70%;
+    width:80%;
     text-align: right;
 
 }
@@ -145,6 +154,7 @@ body, html {
     color:saddlebrown;
     position: absolute;
     bottom: 80px;
+
 }
 .item_qty{
     float:right;
@@ -237,6 +247,7 @@ body, html {
     display: inline-block;
     padding-right: 30px;
 }
+
 #security{
     float: right;
 }
@@ -279,6 +290,9 @@ body, html {
     margin-left: 70px;
 }
 #given_txt{
+    display: inline-block;
+}
+#table_txt,#table_num,#order_number_txt,#order_num,#total_price_txt,#total_price{
     display: inline-block;
 }
 
