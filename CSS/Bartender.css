@@ -134,7 +134,7 @@ body, html {
     color:saddlebrown;
 }
 .order_book_ordernum{
-    width:70%;
+    width:80%;
     text-align: right;
 
 }
@@ -290,6 +290,9 @@ body, html {
     margin-left: 70px;
 }
 #given_txt{
+    display: inline-block;
+}
+#table_txt,#table_num,#order_number_txt,#order_num,#total_price_txt,#total_price{
     display: inline-block;
 }
 
