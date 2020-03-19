@@ -29,12 +29,12 @@ then you can enter javascript calls, to test the functions.
                 <option value="swedish" id="swedish_txt">Swedish</option>
             </select>
         </div>
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Bartender Login</button>
         <div>
 
             <div id="id01" class="modal">
 
-                <form class="modal-content animate" action="/action_page.php" method="post">
+                <form class="modal-content animate" action="Bartender.html" method="post">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     </div>
@@ -46,7 +46,7 @@ then you can enter javascript calls, to test the functions.
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
-                        <button type="submit">Login</button>
+                        <button type="submit" onclick="return check(this.form)"> Login</button>
                         <label>
                             <input type="checkbox" checked="checked" name="remember"> Remember me
                         </label>
@@ -63,9 +63,24 @@ then you can enter javascript calls, to test the functions.
                 // Get the modal
                 var modal = document.getElementById('id01');
 
+
+                // Checks if the user is the correct one and redirects to the bartender's page
+                function check(form)
+                {
+
+                    if(form.uname.value === "Mike" && form.psw.value === "1237")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        alert("Error Password or Username")
+                        return false;
+                    }
+                }
                 // When the user clicks anywhere outside of the modal, close it
                 window.onclick = function(event) {
-                    if (event.target == modal) {
+                    if (event.target === modal) {
                         modal.style.display = "none";
                     }
                 }
@@ -81,12 +96,76 @@ then you can enter javascript calls, to test the functions.
     </div>
 
     <div id="main-page_option-container">
-        <div id="option_1_txt" class="main_page_options">
+        <div class="main_page_options">
+            <button id="myButton" style="width: auto;"> Order</button>
         </div>
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "Menu.html";
+            };
+        </script>
 
-        <div id="option_2_txt" class="main_page_options">
-        </div>
-    </div>
+
+            <div class="main_page_options">
+            <button id="login" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">VIP Login</button>
+            <div>
+
+                <div id="id02" class="modal">
+                    <form class="modal-content animate" action="Menu.html" method="post">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        </div>
+
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button type="submit" onclick="return checkUser(this.form)"> Login</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </form>
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+
+
+                    // Checks if the user is the correct one and redirects to the menu's page
+                    function checkUser(form)
+                    {
+
+                        if(form.uname.value === "Alex" && form.psw.value === "1234")
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            alert("Error Password or Username")
+                            return false;
+                        }
+                    }
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target === modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            </div>
+
+
 
 </div>
 </body>

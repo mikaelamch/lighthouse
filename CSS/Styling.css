@@ -15,8 +15,9 @@ html {
     background-color: #462a17;
     border-radius: 5px;
     padding: 2%;
-    min-height:80px;
+    min-height:20px;
     margin-left:100px;
+    margin-right:100px;
     margin-right:100px;
 }
 .main_page_options:hover{
@@ -90,8 +91,8 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: lightgrey;
-    color: black;
+    background-color: brown;
+    color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -144,6 +145,7 @@ span.psw {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
+
 }
 
 /* Modal Content/Box */
