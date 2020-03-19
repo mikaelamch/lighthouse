@@ -29,7 +29,7 @@ then you can enter javascript calls, to test the functions.
                 <option value="swedish" id="swedish_txt">Swedish</option>
             </select>
         </div>
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Bartender Login</button>
+        <button id="bartender_login_txt" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Bartender Login</button>
         <div>
 
             <div id="id01" class="modal">
@@ -47,15 +47,9 @@ then you can enter javascript calls, to test the functions.
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
                         <button type="submit" onclick="return check(this.form)"> Login</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                        </label>
                     </div>
 
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
-                    </div>
+
                 </form>
             </div>
 
@@ -97,17 +91,17 @@ then you can enter javascript calls, to test the functions.
 
     <div id="main-page_option-container">
         <div class="main_page_options">
-            <button id="myButton" style="width: auto;"> Order</button>
+            <button id="myButton_txt" style="width: auto;"> Order</button>
         </div>
         <script type="text/javascript">
-            document.getElementById("myButton").onclick = function () {
+            document.getElementById("myButton_txt").onclick = function () {
                 location.href = "Menu.html";
             };
         </script>
 
 
             <div class="main_page_options">
-            <button id="login" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">VIP Login</button>
+            <button id="option_2_txt" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">VIP Login</button>
             <div>
 
                 <div id="id02" class="modal">
@@ -124,15 +118,9 @@ then you can enter javascript calls, to test the functions.
                             <input type="password" placeholder="Enter Password" name="psw" required>
 
                             <button type="submit" onclick="return checkUser(this.form)"> Login</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
                         </div>
 
-                        <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-                        </div>
+
                     </form>
                 </div>
 

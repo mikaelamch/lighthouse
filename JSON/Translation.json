@@ -8,8 +8,12 @@
     "welcome-message_txt":"Welcome to the",
     "bar_name_txt":"<b>Lighthouse On The Cliff<b>",
     "welcome-message_cont_txt":"(A franchise of The Flying Dutchman)",
-    "option_1_txt":" Click to order.",
-    "option_2_txt":" Are you a VIP customer? <br> Click to login.",
+    "myButton_txt":" Click to order.",
+    "option_2_txt":" Are you a VIP customer? Click to login.",
+    "id_txt": "Click to order",
+    "log_txt": "Log in",
+    "bartender_login_txt":"Bartender login",
+
 
     "table_txt": "Table :",
     "order_number_txt": "Order Number:",
@@ -55,8 +59,10 @@
     "welcome-message_txt":"Välkommen till",
     "bar_name_txt":"<b>Fyr På Klippan<b>",
     "welcome-message_cont_txt":"(En franchise av The Flying Dutchman)",
-    "option_1_txt":" Klicka för att beställa.",
-    "option_2_txt":" Är du VIP-kund? <br> Klicka för att logga in.",
+    "myButton_txt":" Klicka för att beställa.",
+    "option_2_txt":" Är du VIP-kund? Klicka för att logga in.",
+    "log_txt": " Är du VIP-kund? <br> Klicka för att logga in.",
+    "bartender_login_txt":"Bartender logga in",
 
     "table_txt": "Bord: ",
     "order_number_txt": "Beställningsnummer: ",
