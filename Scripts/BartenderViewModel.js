@@ -14,10 +14,10 @@ dataViewModels.ordersListMenuItems_1b = '<div class="item_qty">[';
 dataViewModels.ordersListMenuItems_1c = ']</div></div>';
 
 dataViewModels.ordersList_1 = '<div class="orders_list">';
-dataViewModels.ordersList_2 = '<div class="order_book_titles" id="table_txt"> Table: ';
-dataViewModels.ordersList_3 = '<div class="order_book_titles order_book_ordernum" id="order_number_txt"> Order Number: ';
-dataViewModels.ordersList_4a = '<div class="order_book_total_price" id="total_price_txt">Total Price : ';
-dataViewModels.ordersList_4b = ' kr</div>';
+dataViewModels.ordersList_2 = '<div class="order_book_titles" > <div id="table_txt">Table:</div> <div id="table_num">';
+dataViewModels.ordersList_3 = '<div class="order_book_titles order_book_ordernum"><div id="order_number_txt"> Order Number:</div> <div id="order_num"> ';
+dataViewModels.ordersList_4a = '<div class="order_book_total_price"><div id="total_price_txt">Total Price :</div> <div id="total_price">';
+dataViewModels.ordersList_4b = ' kr</div></div>';
 dataViewModels.ordersList_5a = '<div class="order_book_cboxes" > <div class="deliver_cb"> <input type="checkbox" id=';
 dataViewModels.ordersList_5b = ' class="delivered_cb" name="delivered" value="delivered" onclick=\'handleDeliveredClick(this)\' ';
 dataViewModels.ordersList_5c = '> </div> <div id="delivered_txt"> : Delivered</div> <br>';
@@ -25,6 +25,7 @@ dataViewModels.ordersList_6a = '<div class="paid_cb"> <input type="checkbox" id=
 dataViewModels.ordersList_6b = ' class="paid_cb" name="paid" value="paid" onclick=\'handlePaidClick(this)\' ';
 dataViewModels.ordersList_6c = '> </div> <div id="paid_txt">: Paid </div></div></div>';
 dataViewModels.divend = '</div>';
+dataViewModels.doubledivend = '</div></div>';
 
 
 
