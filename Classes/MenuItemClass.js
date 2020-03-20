@@ -1,5 +1,5 @@
 /**
- * This class represents the structure of an element in the menu. The data is present in ../JSON/DB_Beverages.json, as such the *   * attributes were choses according to what is available in the DB
+ * This class represents the structure of an element in the menu. The data is present in ../JSON/DB_Beverages.json, as such the attributes were choses according to what is available in the DB
  * @file MenuItemClass.js
  * @author Alessandra
  */

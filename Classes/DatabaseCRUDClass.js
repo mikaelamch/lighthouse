@@ -31,12 +31,16 @@ class DatabaseCRUDClass {
         return json;
     }
 
+    /**
+     * This getter method returns the json with the database
+     * @returns {JSON} with the database
+     */
     _getDbJSON() {
         return this.dbJSON;
     }
 
     /**
-     * This getter allows to get a complete object from the database.
+     * This getter method allows to get a complete object from the database.
      * @param {Number} i the key of the specific object in the json
      * @returns {Object} an object with all the data taken from the database for a single item (picked through the id i - the input parameter) 
      */
