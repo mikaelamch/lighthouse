@@ -29,7 +29,7 @@ then you can enter javascript calls, to test the functions.
                 <option value="swedish" id="swedish_txt">Swedish</option>
             </select>
         </div>
-        <button id="bartender_login_txt" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Bartender Login</button>
+        <button id="bartender_login_txt" onclick="document.getElementById('id01').style.display='block'"  style="width:auto;">Bartender Login</button>
         <div>
 
             <div id="id01" class="modal">
@@ -90,9 +90,9 @@ then you can enter javascript calls, to test the functions.
     </div>
 
     <div id="main-page_option-container">
-        <div class="main_page_options">
-            <button id="myButton_txt" style="width: auto;"> Order</button>
-        </div>
+
+            <button id="myButton_txt" style="width: auto;" class="main_page_options"> Order</button>
+
         <script type="text/javascript">
             document.getElementById("myButton_txt").onclick = function () {
                 location.href = "Menu.html";
@@ -100,8 +100,8 @@ then you can enter javascript calls, to test the functions.
         </script>
 
 
-            <div class="main_page_options">
-            <button id="option_2_txt" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">VIP Login</button>
+
+            <button id="option_2_txt" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="main_page_options">VIP Login</button>
             <div>
 
                 <div id="id02" class="modal">
@@ -151,10 +151,11 @@ then you can enter javascript calls, to test the functions.
                     }
                 </script>
             </div>
-            </div>
 
 
 
+
+</div>
 </div>
 </body>
 </html>

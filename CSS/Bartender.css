@@ -15,11 +15,10 @@ body, html {
     margin:50px;
     background-image: url("../Images/Dark-Wood-Table-Texture.jpg");
     transition: border 1s;
-
 }
 
 .tables:hover{
-    border: 2px solid aliceblue;
+    border: 3px solid aliceblue;
 
 }
 .order_1{
@@ -147,7 +146,8 @@ body, html {
     color:saddlebrown;
 }
 .order_book_ordernum{
-    width:80%;
+   // width:80%;
+    float:right;
     text-align: right;
 
 }
