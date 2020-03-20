@@ -94,7 +94,7 @@ $(() => {
     $('.add-person').click(() => {
         // PSEUDOCODE: When adding a new person 
         // -> The previous instance gets added to the group order
-        if(order._getArray().length > 0) {
+        if(order._getArray().length > 0 && groupOrder._getNumberOfOrders() < 5) {
             groupOrder.add(order);
             // -> A new instance of the order gets created
             order = new OrderClass();
