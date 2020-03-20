@@ -158,9 +158,9 @@ $(function() { //executes only after the final page with all components are load
         let tableNum = placedOrders.table;
         let tableName = 'Table_' + placedOrders.table;
         let orders = placedOrders.orders;
-        orders.forEach(function () {
+        //orders.forEach(function () {
             displayOrderOnLoad(tableName, tableNum - 1);
-        });
+      //  });
     }
 
     //Enable ths code when multiple tables orders are implemented from customer view
@@ -175,7 +175,7 @@ $(function() { //executes only after the final page with all components are load
     }*/
 
     function displayOrderOnLoad(tableName, tableNumber) { //to reload all the current orders from local storage when app is refreshed
-        for (let j = 0; j < 6; j++) {
+        for (let j = 0; j < localStorageGetObj('savedOrders').orders.length; j++) {
             //paid or unplaced orders need not be displayed
             if (!isEqual(localStorageGetObj('ordersMatrix')[tableNumber][j], [1, 1, 1]) && !isEqual(localStorageGetObj('ordersMatrix')[tableNumber][j], [0, 0, 0])) {
                 let order = ordersArray[j]; //insert order from the ordersArray

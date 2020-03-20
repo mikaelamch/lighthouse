@@ -13,9 +13,10 @@ function writeToOrdersMatrix(savedOrders) {
     for (let j = 0; j < savedOrders.orders.length; j++) {            //if an order has been paid & cleared OR if the order was never placed
         if (isEqual(ordersMatrix[savedOrders.table - 1][j], [1, 1, 1]) || isEqual(ordersMatrix[savedOrders.table - 1][j], [0, 0, 0])) {
             ordersMatrix[savedOrders.table - 1][j] = [1, 0, 0]; //save state in the ordersMatrix (order placed, not delivered, not paid)
-            localStorageSetObj('ordersMatrix', ordersMatrix);
+
         }
     }
+    localStorageSetObj('ordersMatrix', ordersMatrix);
 }
 
 //Enable ths code when multiple tables orders are implemented from customer view
