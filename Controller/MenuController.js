@@ -63,6 +63,16 @@ $(() => {
     makeViewDroppable();
 
     // PSEUDO CODE: handlers for the buttons
+    // $('#place-order-btn').click(() =>{
+    //     $('#orderRecapModal').hide();
+    //     $('.overlay').hide();
+    // });
+
+    $('.modal-close-btn').click(() => {
+        $('#orderRecapModal').hide();
+        $('.overlay').hide();
+    });
+
     $('.undo').click(() => {
         if (undoRedo._getDoneOpArray().length > 0) {
             undoRedo.undo();
@@ -70,6 +80,7 @@ $(() => {
             viewO._refreshView(`#${viewO._getActiveOrderId()}`, order);
         }
     });
+
 
     $('.redo').click(() => {
         if (undoRedo._getUndoneOpArray().length > 0) {
@@ -82,22 +93,44 @@ $(() => {
     $('.add-person').click(() => {
         // PSEUDOCODE: When adding a new person 
         // -> The previous instance gets added to the group order
-        groupOrder.add(order);
-        // -> A new instance of the order gets created
-        order = new OrderClass();
-        //-> The current orther gets hidden (VIEW) 
-        let activeView = viewO._getActiveOrderId();
-        viewO._setViewToUnactive(activeView);
-        
-        //-> The new one gets created and shown (VIEW)
-        viewO._createNewOrderSection(groupOrder._getNumberOfOrders());
-        makeViewDroppable(order);
+        if(order._getArray().length > 0) {
+            groupOrder.add(order);
+            // -> A new instance of the order gets created
+            order = new OrderClass();
+            //-> The current orther gets hidden (VIEW) 
+            let activeView = viewO._getActiveOrderId();
+            viewO._setViewToUnactive(activeView);
+            
+            //-> The new one gets created and shown (VIEW)
+            viewO._createNewOrderSection(groupOrder._getNumberOfOrders());
+            makeViewDroppable(order);
+        }
     });
 
-    $('.finish').click(() => {
-        LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
-        console.log(LSM.retrieveFromLocal(LSM.savedOrders));
-        writeToOrdersMatrix(LSM.retrieveFromLocal(LSM.savedOrders)); //change ordersMatrix in local storage based on order
+    $('.finish-btn').click(() => {
+        if(order._getArray().length > 0) {
+            groupOrder.add(order);
+        }
+        if (groupOrder._getNumberOfOrders() > 0) {
+            $('#orderRecapModal').show();
+            $('.overlay').show();
+            LSM.saveToLocal(LSM.savedOrders, groupOrder.parseOrderToJSON());
+            console.log(LSM.retrieveFromLocal(LSM.savedOrders));
+            writeToOrdersMatrix(LSM.retrieveFromLocal(LSM.savedOrders)); //change ordersMatrix in local storage based on order
+        } else if (order._getArray() > 0){
+            $('#orderRecapModal').show();
+            $('.overlay').show();
+            LSM.saveToLocal(LSM.savedOrders, order.parseOrderToJSON());
+            console.log(LSM.retrieveFromLocal(LSM.savedOrders));
+            writeToOrdersMatrix(LSM.retrieveFromLocal(LSM.savedOrders)); //change ordersMatrix in local storage based on order
+        }        
+        
+    });
+
+    // When the user clicks anywhere outside of the modal, the modal closes
+    $('.overlay').click(() => {
+        $('#orderRecapModal').hide();
+        $('.overlay').hide();
     });
 });
 

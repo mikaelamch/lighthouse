@@ -10,123 +10,78 @@
 </head>
 
 <body>
+  <div class="overlay"></div>
   <div>
+    <!-- MENU SECTION -->
     <div id="menu">
       <div class='menu-container' id="rootMenu">
         <!-- The cards with the menu items will get appended in here -->
-
       </div>
-      <!-- <div id="inner-container" class="innerContainer">
-        <button class="tablink" onclick="openPage('Beverage_Menu', this, 'red')" id="defaultOpen">Beverage Menu</button>
-        <button class="tablink" onclick="openPage('Snack_Menu', this, 'green')">Snack Menu</button>
-        <button class="tablink" onclick="openPage('Single_Order', this, 'blue')">Single Order</button>
-        <button class="tablink" onclick="openPage('Group_Order', this, 'yellow')">Group Order</button>
-
-        <div id="Beverage_Menu" class="tabcontent">
-          <h3>Beverage Menu</h3>
-          <p>Drinks</p>
-
-          
-        </div>
-
-        <div id="Snack_Menu" class="tabcontent">
-          <h3>Snack Menu</h3>
-          <p>Food</p>
-        </div>
-
-        <div id="Single_Order" class="tabcontent">
-          <div class="order">
-            <p>Order</p>
-          </div>
-        </div>
-
-        <div id="Group_Order" class="tabcontent">
-          <h3>Group Order</h3>
-        </div>
-
-      </div>
-    </div> -->
     </div>
     <!-- End #menu -->
 
-
-
-    <!-- <script>
-    function openPage(pageName, elmnt, color) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablink");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-      }
-      document.getElementById(pageName).style.display = "block";
-      elmnt.style.backgroundColor = color;
-    }
- 
-
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-  </script> -->
-    <div class="order-buttons-container">
-      
-      <div id="order">
+    <!-- The Modal -->
+    <div id="orderRecapModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-close-btn">&times;</span>
+          <h2 id="recap_orders_txt"></h2>
+        </div>
+        <div id="order_placed_txt" class="modal-body">
+        </div>
         
+        <div class="modal-footer">
+          <!-- <button type="button" id="place-order-btn" class="button">Place Order</button> -->
+          <img src="Images/hotel.svg" alt="order placed">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ORDER SECTION-->
+    <div class="order-buttons-container">
+      <div id="order">
         <div id="person1" class="single-order active">
           <div class="order-title">Person 1</div>
           <div class="listOfOrders">
-            
+
           </div>
-          
-        </div>
-        <!-- Temporary second person for the group order -->
-        <!-- <div id="person2" class="unactive">
-          <div class="listOfOrders">
-            
-          </div>
-          <div class="clusterOfButtons">
-            <button type="button" class="undo">Undo</button>
-            <button type="button" class="redo">Redo</button>
-            <button type="button" class="add-person">Add Person</button>
-          </div>
-        </div> -->
-        </div>
-        <div class="clusterOfButtons">
-          <button type="button" class="button undo">Undo</button>
-          <button type="button" class="button redo">Redo</button>
-          <button type="button" class=" button add-person">Add Person</button>
-          <button type="button" class="button finish">Finish</button>
         </div>
       </div>
-    </div>
-
-    <div id="innerflexbox3">
-      <div class="bottombar">
-        <div id="server">Mike 1237</div>
-        <!--<div id="time"></div>-->
-        <div id="today"></div>
-        <div id="combination_txt"></div>
-        <div id="bar_language_select">
-          <span id="bar_language_select_txt"></span>
-          <select class="lang">
-            <option value="english" selected="selected" id="bar_english_txt"></option>
-            <option value="swedish" id="bar_swedish_txt"></option>
-          </select>
-        </div>
+      <div class="clusterOfButtons">
+        <button type="button" id="undo_txt" class="button undo">Undo</button>
+        <button type="button" id="redo_txt" class="button redo">Redo</button>
+        <button type="button" id="add_person_txt" class=" button add-person">Add Person</button>
+        <button type="button" id="finish_txt" class="button finish-btn"></button>
       </div>
     </div>
+  </div>
 
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="Scripts/TranslationControl.js"></script>
-    <script type="text/javascript" src="Scripts/UtilityFunctions.js"></script>
-    <script type="module" src="Controller/MenuController.js"></script>
-    <script type="module" src="View/MenuDynamicView.js"></script>
-    <script type="module" src="View/OrderDynamicView.js"></script>
+  <!-- FOOTER SECTION -->
+  <div id="innerflexbox3">
+    <div class="bottombar">
+      <div id="server">Mike 1237</div>
+      <!--<div id="time"></div>-->
+      <div id="today"></div>
+      <div id="combination_txt"></div>
+      <div id="bar_language_select">
+        <span id="bar_language_select_txt"></span>
+        <select class="lang">
+          <option value="english" selected="selected" id="bar_english_txt"></option>
+          <option value="swedish" id="bar_swedish_txt"></option>
+        </select>
+      </div>
+    </div>
+  </div>
 
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="Scripts/TranslationControl.js"></script>
+  <script type="text/javascript" src="Scripts/UtilityFunctions.js"></script>
+  <script type="module" src="Controller/MenuController.js"></script>
+  <script type="module" src="View/MenuDynamicView.js"></script>
+  <script type="module" src="View/OrderDynamicView.js"></script>
 </body>
 
 </html>

@@ -51,7 +51,13 @@
     "given_txt": "Given on the house today",
 
 
-    "person_txt": "Person"
+    "person_txt": "Person",
+    "finish_txt": "Finish",
+    "recap_orders_txt": "Orders' status",
+    "order_placed_txt": "Your order has been placed!",
+    "undo_txt": "Undo",
+    "redo_txt": "Redo",
+    "add_person_txt": "Add Person"
 
   },
   "swedish": {
@@ -97,6 +103,12 @@
     "menu_txt": "Meny",
     "given_txt": "Gratis dryck idag",
 
-    "person_txt": "Person"
+    "person_txt": "Person",
+    "finish_txt": "Avsluta",
+    "recap_orders_txt": "Orderstatus",
+    "order_placed_txt": "Din order har lagts!",
+    "undo_txt": "Ångra",
+    "redo_txt": "Göra om",
+    "add_person_txt": "Lägg till person"
   }
 }
