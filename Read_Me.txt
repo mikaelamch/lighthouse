@@ -23,7 +23,12 @@ into the Given on the house today column from the menu column. These actions of 
 'given on the house' column cannot be removed anymore as they are now saved in the local memory.
 
 Customer View:
-1. Undo and redo are working as intended – placing an item in the order area can be undone and it works for multiple items in a row, until the order is empty. After undoing an item in the order, redo will bring it back.
-2. Dragging items in the order area adds them to the order when they are dropped there, otherwise they can be dragged around the screen, without it affecting anything.
-3. Adding a person to an order automatically makes it a group order. The first person’s choices are saved and then when the “finish” button is pressed, the order is sent to the bartender page (it’s saved in local storage). The group order is limited to six people.
-4. The language can be changed through the dropdown menu and the text in the buttons and in the model (the pop-up window after clicking “finish”) is translated between Swedish and English. The items in the menu do not have a translation.
+1. Undo and redo are working as intended – placing an item in the order area can be undone and it works for multiple items in a row,
+until the order is empty. After undoing an item in the order, redo will bring it back.
+2. Dragging items in the order area adds them to the order when they are dropped there, otherwise they can be dragged around the screen,
+without it affecting anything.
+3. Adding a person to an order automatically makes it a group order. 
+The first person’s choices are saved and then when the “finish” button is pressed, the order is sent to the bartender page 
+(it’s saved in local storage). The group order is limited to six people.
+4. The language can be changed through the dropdown menu and the text in the buttons and in the model (the pop-up window after
+clicking “finish”) is translated between Swedish and English. The items in the menu do not have a translation.
