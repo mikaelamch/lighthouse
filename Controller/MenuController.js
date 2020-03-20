@@ -71,6 +71,7 @@ $(() => {
     $('.modal-close-btn').click(() => {
         $('#orderRecapModal').hide();
         $('.overlay').hide();
+        history.go(0);
     });
 
     $('.undo').click(() => {
@@ -131,6 +132,7 @@ $(() => {
     $('.overlay').click(() => {
         $('#orderRecapModal').hide();
         $('.overlay').hide();
+        history.go(0)
     });
 });
 
