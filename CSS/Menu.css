@@ -5,6 +5,7 @@ body, html {
   width: 100%;
 }
 
+/* Menu section */
 #menu {
   width: 100%;
   height: 60vh;
@@ -20,6 +21,12 @@ body, html {
   grid-template-columns: 1fr 1fr 1fr;
   max-height: 100%;
   overflow: auto;
+}
+
+/* Order section */
+.order-buttons-container {
+  height: 20%;
+  text-align: center;
 }
 
 #order {
@@ -49,6 +56,7 @@ body, html {
   overflow: auto;
 }
 
+/* Buttons */
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -67,18 +75,13 @@ body, html {
   background-color: rgb(3, 100, 245);
 }
 
-.order-buttons-container {
-  height: 20%;
-  text-align: center;
-}
-
-.add-person {
+.add-person-btn {
   position: relative;
   margin: 1em;
   background-color: rgb(125, 123, 255);
 }
 
-
+/* Menu items */
 .active {
   display: block;
 }
@@ -87,6 +90,7 @@ body, html {
   display: none;
 }
 
+/* List shown in the order section */
 .nameOrderItem {
   font-size: 1.3em;
   font-weight: bold;
@@ -103,7 +107,7 @@ body, html {
   font-style: italic;
 }
 
-/* bottom bar style */
+/* Bottom bar */
 .bottombar{
   min-height: 45px;
   line-height: 45px;
@@ -121,7 +125,7 @@ body, html {
   padding-right: 30px;
 }
 
-/* Center the MODAL */
+/* MODAL */
 #orderRecapModal {
   position: absolute;
   margin-left: auto;
@@ -132,6 +136,26 @@ body, html {
   width: 50%;
   z-index: 3;
   display: none;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  /* The animation is defined below */
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation, when the pop-up window appears */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
 }
 
 /* Modal Header */
@@ -158,22 +182,9 @@ body, html {
   text-align: center;
 }
 
-.modal-footer > img{
+.modal-footer > img {
   width: 80px;
   height: 80px;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s
 }
 
 /* The Close Button */
@@ -191,23 +202,14 @@ body, html {
   cursor: pointer;
 }
 
-/* Add Animation */
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
+/* Overlay behind the modal */
 .overlay{
-  position: fixed; /* Positioning and size */
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(59, 59, 59, 0.747); /* color */
+  background-color: rgba(59, 59, 59, 0.747);
   display: none; /* making it hidden by default */
 }
-
-/* #order:hover #person1 {
-  display: block;
-} */

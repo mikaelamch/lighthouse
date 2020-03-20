@@ -11,8 +11,8 @@ class OrderClass {
     }
 
     /**
-     * This method adds an orderItem object to the array that represents the order for one person.
-     * @param {MenuItemClass} menuItem this is the instance of the MenuItemClass that will serve as a provider for the attributes in the orderItemObj
+     * This method adds a MenuItemClass object (or at least, a parsed version of it) to the array that represents the order for one person
+     * @param {MenuItemClass} menuItem this is the instance of the MenuItemClass that will serve as a provider for the attributes in the order object to be added to the orderArray
      */
     add(menuItem) {
         let orderItemObj = {
@@ -27,20 +27,18 @@ class OrderClass {
     }
 
     /**
-     * This method updated the quantity (increments it by 1) of an orderItem object in the array that represents the order for one person. It also updates the total price (qty * price).
+     * This method updates the quantity (increments it by 1) of an orderItem object in the array that represents the order for one person. It also updates the total price (qty * price).
      * @param {Number} id this is the id of the orderItem object that needs to be updated
      */
     update(id) {
         let objIndex = this.orderArray.findIndex(x => x.id === id);
         let object = this.orderArray[objIndex];
-        // Update qty
         object.qty++;
-        // Update totalPrice
         object.totalPrice = object.price * object.qty;
     }
 
     /**
-     * This method updated the quantity (decreases it by 1) of an orderItem object in the array that represents the order for one person. It also updates the total price (qty * price).
+     * This method updates the quantity (decreases it by 1) of an orderItem object in the array that represents the order for one person. It also updates the total price (qty * price).
      * @param {Number} id this is the id of the orderItem object that needs to be deleted
      */
     deleteSingleItem(id) {
@@ -54,12 +52,11 @@ class OrderClass {
         } else {
             // Delete element from array altogether
             this.orderArray = this.orderArray.filter(x => x.id != id);
-
         }
     }
 
     /**
-     * Finds an object in the order array based on the id.
+     * Finds an object in the order array based on the id
      * @param {Number} id of the menu item that I added to the order list
      * @returns {Boolean} true - if object is found, false - if object is not found
      */
@@ -73,7 +70,6 @@ class OrderClass {
      */
     updateUndoFromOperation(operation) {
         this.deleteSingleItem(operation.item.id);
-
     }
     
     /**
@@ -91,6 +87,10 @@ class OrderClass {
         }
     }
 
+    /**
+     * This method takes the group order array and parses it in a JSON object
+     * @returns the JSON with the parsed information from the group order
+     */
     parseOrderToJSON() {
         let JSON = {
             table: 2,
@@ -103,6 +103,7 @@ class OrderClass {
         return JSON;
     }
 
+    // Getters
     _getSingleItem(id) {
         return this.orderArray.find(x => x.id === id);
     }

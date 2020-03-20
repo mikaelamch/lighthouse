@@ -74,7 +74,7 @@ class MenuItemClass {
     }
 
     /**
-     * Gets an array of allergy-free propreties of the beverage
+     * Gets an array of special propreties of the beverage
      * @returns {Array<String>} of special properties as strings. o = organic, g = gluten free, l = lactose free, k = kosher
      */
     _getSpecialProperties() {

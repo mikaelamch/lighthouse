@@ -22,7 +22,6 @@ class UndoRedoManagerClass {
             this.undoneOperations = [];
             this.doneOperations.push(operation);
         }
-            
     }
 
     /**
@@ -43,6 +42,7 @@ class UndoRedoManagerClass {
         this.doneOperations.push(toRedoOp);
     }
 
+    // Getters
     _getLastOpInUndo() {
         return this.undoneOperations[this.undoneOperations.length - 1];
     }
@@ -50,7 +50,6 @@ class UndoRedoManagerClass {
     _getLastOpInDone() {
         return this.doneOperations[this.doneOperations.length - 1];
     }
-
 
     _getDoneOpArray() {
         return this.doneOperations;

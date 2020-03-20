@@ -69,30 +69,28 @@ class MenuDynamicView {
 
     }
 
-    // Utility View methods
-    // loadHtml(fileName) {
-    //     $.get(fileName, html => {
-    //         return html;
-    //     });
-    // }
-
-    // htmlToElements(html) {
-    //     var template = document.createElement('template');
-    //     template.innerHTML = html;
-    //     return template.content.childNodes;
-    // }
-
-    // createElement(tag, text, classes) {
-    //     const newElem = $(tag, { text: text });
-    //     return newElem;
-    // }
-
     /**
      * Appends new element in the #menuRoot div
      * @param {String} element string containing the html of the DOM element to be inserted in the #menuRoot div
      */
     append(element) {
-        $(this.root).append(element)
+        $(this.root).append(element);
+    }
+
+    /**
+     * Show the pop up modal
+     */
+    showPopUpModal() {
+        $('#orderRecapModal').show();
+        $('.overlay').show();
+    }
+
+    /**
+     * Hide the pop up modal
+     */
+    hidePopUpModal() {
+        $('#orderRecapModal').hide();
+        $('.overlay').hide();
     }
 }
 
