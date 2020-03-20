@@ -10,11 +10,10 @@ function localStorageGetObj(key) {
 //add new order into ordersMatrix
 function writeToOrdersMatrix(savedOrders) {
     let ordersMatrix =  localStorageGetObj('ordersMatrix');
-    for (let j = 0; j < 6; j++) {            //if an order has been paid & cleared OR if the order was never placed
+    for (let j = 0; j < savedOrders.orders.length; j++) {            //if an order has been paid & cleared OR if the order was never placed
         if (isEqual(ordersMatrix[savedOrders.table - 1][j], [1, 1, 1]) || isEqual(ordersMatrix[savedOrders.table - 1][j], [0, 0, 0])) {
             ordersMatrix[savedOrders.table - 1][j] = [1, 0, 0]; //save state in the ordersMatrix (order placed, not delivered, not paid)
             localStorageSetObj('ordersMatrix', ordersMatrix);
-            break;
         }
     }
 }
